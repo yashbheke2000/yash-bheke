@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import ContactSection from '@/components/ContactSection';
+import EducationLeadershipSection from '@/components/EducationLeadershipSection';
 import { 
   Github, 
   Linkedin, 
@@ -374,51 +375,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <Badge className="bg-primary/10 text-primary border-primary/20">Education</Badge>
-            <h2 className="text-4xl font-bold text-professional">Academic Foundation</h2>
-          </div>
+      <EducationLeadershipSection />
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="shadow-card border-0">
-              <CardHeader className="bg-gradient-primary text-white">
-                <CardTitle className="flex items-center">
-                  <GraduationCap className="mr-3 h-5 w-5" />
-                  Master of Science
-                </CardTitle>
-                <p className="text-white/90">Information Systems</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-2">
-                  <p className="font-semibold text-professional">University of Cincinnati</p>
-                  <p className="text-muted-foreground">2024 - 2026 (Expected)</p>
-                  <p className="text-sm text-professional/70">Cincinnati, OH</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card border-0">
-              <CardHeader className="bg-gradient-professional text-white">
-                <CardTitle className="flex items-center">
-                  <GraduationCap className="mr-3 h-5 w-5" />
-                  Bachelor of Engineering
-                </CardTitle>
-                <p className="text-white/90">Computer Engineering</p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-2">
-                  <p className="font-semibold text-professional">SIES Graduate School of Technology</p>
-                  <p className="text-muted-foreground">2018 - 2022</p>
-                  <p className="text-sm text-professional/70">Mumbai, India</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
       {/* Contact Section */}
       <ContactSection />
 
