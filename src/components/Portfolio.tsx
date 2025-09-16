@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
+import ContactSection from '@/components/ContactSection';
 import { 
   Github, 
   Linkedin, 
@@ -418,6 +419,8 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Footer */}
       <footer className="bg-professional text-white py-12">
