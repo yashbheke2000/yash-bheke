@@ -1,12 +1,14 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ExternalLink, Code, Star } from "lucide-react";
+﻿import { Badge } from "@/components/ui/badge";
+import { Calendar } from "lucide-react";
+import projectImg1 from "@/assets/safestreet.jpg"; // Example import for SafeStreet Chatbot image
+import projectImg2 from "@/assets/airbnb.jpg";     // Example import for Airbnb Pricing Tool image
 
 const projects = [
     {
         title: "SafeStreet Chatbot",
-        period: "Jan 2025 � Feb 2025",
-        description: "Architected a multimodal safety chatbot using Gemini-1.5 Pro with advanced Vision-LLM pipelines and RAG implementation.",
+        period: "January 2025 – February 2025",
+        description:
+            "Architected a multimodal safety chatbot using Gemini-1.5 Pro with advanced Vision-LLM pipelines and RAG implementation.",
         highlights: [
             "Integrated Vision-LLM pipelines for image analysis",
             "Implemented RAG pipelines for accurate information retrieval",
@@ -14,80 +16,94 @@ const projects = [
             "Generated housing recommendations based on safety data"
         ],
         tech: ["Gemini-1.5 Pro", "Vision-LLM", "RAG", "Python", "NLP"],
-        code: "https://github.com/example/safestreet", // Replace
-        demo: "https://demo.safestreet.com"            // Replace
+        code: "https://github.com/example/safestreet",
+        demo: "https://demo.safestreet.com",
+        img: projectImg1 // Use your actual import path
     },
     {
         title: "Airbnb Pricing Tool",
-        period: "Oct 2024 � Dec 2024",
-        description: "Built a comprehensive pricing optimization tool for Airbnb listings using machine learning and advanced feature engineering.",
+        period: "October 2024 – December 2024",
+        description:
+            "Built a comprehensive pricing optimization tool for Airbnb listings using machine learning and advanced feature engineering.",
         highlights: [
             "Cleansed and shaped large-scale Airbnb listing data",
-            "Engineered revenue-signals for better predictions",
+            "Engineered revenue-signal features for better predictions",
             "Optimized Random Forest model for pricing accuracy",
+            "Uncovered key price drivers through data analysis",
             "Designed self-serving pricing tool interface"
         ],
         tech: ["Python", "Random Forest", "Feature Engineering", "Data Analysis", "Machine Learning"],
-        code: "https://github.com/example/airbnb-pricing", // Replace
-        demo: "https://demo.airbnbpricing.com"             // Replace
+        code: "https://github.com/example/airbnb-pricing",
+        demo: "https://demo.airbnbpricing.com",
+        img: projectImg2 // Use your actual import path
     }
-    // Add more projects as desired...
 ];
 
 const ProjectsSection = () => (
-    <section id="projects" className="py-20 bg-gradient-subtle">
+    <section id="projects" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-            <div className="text-center space-y-4 mb-14">
-                <Badge className="bg-accent/10 text-accent border-accent/20">Featured Projects</Badge>
-                <h2 className="text-4xl font-bold text-professional">Featured Projects</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+                <h2 className="text-5xl font-bold">Featured Projects</h2>
+                <p className="text-lg text-muted-foreground">
                     Innovative solutions built with cutting-edge technologies
                 </p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                {projects.map((p, index) => (
-                    <Card key={p.title} className="shadow-card border-0 hover:shadow-lg transition-all group">
-                        <CardHeader className="bg-gradient-professional text-white">
-                            <CardTitle className="flex items-center justify-between">
-                                <span className="flex items-center">
-                                    <Code className="mr-3 h-5 w-5" />
-                                    {p.title}
+            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {projects.map((p, i) => (
+                    <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                        {/* Project Image */}
+                        <div className="w-full h-48 overflow-hidden">
+                            <img
+                                src={p.img}
+                                alt={`${p.title} cover`}
+                                className="object-cover w-full h-full"
+                            />
+                        </div>
+                        {/* Project Content */}
+                        <div className="flex-1 flex flex-col px-8 py-7">
+                            <div className="flex items-center justify-between mb-1">
+                                <span className="font-bold text-xl">{p.title}</span>
+                                <span className="flex items-center text-muted-foreground text-sm">
+                                    <Calendar className="mr-1 h-4 w-4" />
+                                    {p.period}
                                 </span>
-                                <span className="text-xs">{p.period}</span>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-6 space-y-4">
-                            <p className="font-medium text-professional/90">{p.description}</p>
-                            <div>
-                                <h4 className="font-semibold mb-2 text-professional">Key Features:</h4>
-                                <ul className="space-y-2">
-                                    {p.highlights.map((h, i) => (
-                                        <li key={i} className="flex items-start space-x-2 text-sm">
-                                            <Star className="h-3 w-3 text-accent mt-1 flex-shrink-0" />
-                                            <span className="text-professional/80">{h}</span>
+                            </div>
+                            <p className="mb-4 text-professional/90">{p.description}</p>
+                            <div className="mb-4">
+                                <div className="font-semibold mb-2">Key Features:</div>
+                                <ul className="space-y-2 text-base">
+                                    {p.highlights.map((h, idx) => (
+                                        <li key={idx} className="flex items-center text-muted-foreground/90">
+                                            <span className="mr-2 text-blue-500 font-bold">&rarr;</span>
+                                            <span>{h}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="flex flex-wrap gap-2 mt-3">
-                                {p.tech.map(tech => (
-                                    <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
-                                ))}
+                            <div className="mb-5">
+                                <div className="font-semibold mb-1 mt-2">Technologies:</div>
+                                <div className="flex flex-wrap gap-2">
+                                    {p.tech.map((t, idx) => (
+                                        <Badge key={idx} variant="outline" className="text-xs py-1 px-3">
+                                            {t}
+                                        </Badge>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="flex space-x-3 mt-6">
-                                <a href={p.code} target="_blank" rel="noopener noreferrer">
-                                    <button className="px-4 py-2 bg-muted hover:bg-accent text-professional flex items-center rounded font-semibold">
-                                        <Code className="mr-1 h-4 w-4" /> View Code
+                            <div className="mt-auto flex space-x-3 pt-2">
+                                <a href={p.code} target="_blank" rel="noopener noreferrer" className="flex-1">
+                                    <button className="w-full flex items-center justify-center border border-neutral-300 hover:bg-neutral-100 text-professional font-medium py-2 rounded-lg transition">
+                                        <span className="mr-2">🡥</span> View Code
                                     </button>
                                 </a>
-                                <a href={p.demo} target="_blank" rel="noopener noreferrer">
-                                    <button className="px-4 py-2 bg-primary text-white hover:bg-primary/90 flex items-center rounded font-semibold">
-                                        <ExternalLink className="mr-1 h-4 w-4" /> Live Demo
+                                <a href={p.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                                    <button className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition">
+                                        <span className="mr-2">🡥</span> Live Demo
                                     </button>
                                 </a>
                             </div>
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

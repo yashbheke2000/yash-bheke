@@ -1,141 +1,159 @@
 import { useState } from "react";
-import {
-    Code, Brain, Database, Server, BarChart, Cloud
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Code, BarChart, Database, Server, Cpu, Cloud } from "lucide-react";
 
 const SKILL_CATEGORIES = [
     {
         key: "programming",
         label: "Programming Languages",
         icon: <Code className="h-5 w-5 mr-2" />,
+        color: "text-blue-700",
+        bgPanel: "bg-blue-50",
+        dot: "bg-blue-500",
         skills: [
-            { name: "Python" },
-            { name: "TypeScript" },
-            { name: "Java" },
-            { name: "JavaScript" },
-            { name: "C" },
-            { name: "C++" },
-            { name: "C#" },
-            { name: "Bash" },
+            { name: "Python", level: 4 },
+            { name: "JavaScript", level: 4 },
+            { name: "TypeScript", level: 4 },
+            { name: "Java", level: 4 },
+            { name: "C", level: 3 },
+            { name: "C++", level: 3 }
         ]
     },
     {
-        key: "datascience",
+        key: "ml",
         label: "Data Science & ML",
-        icon: <Brain className="h-5 w-5 mr-2" />,
+        icon: <BarChart className="h-5 w-5 mr-2" />,
+        color: "text-purple-700",
+        bgPanel: "bg-purple-50",
+        dot: "bg-purple-500",
         skills: [
-            { name: "Machine Learning" },
-            { name: "TensorFlow" },
-            { name: "PyTorch" },
-            { name: "NLP" },
-            { name: "Statistical Analysis" },
-            { name: "RAG" },
-            { name: "LLMs" },
+            { name: "GenAI", level: 4 },
+            { name: "NLP", level: 4 },
+            { name: "LLMs", level: 4 },
+            { name: "PyTorch", level: 4 },
+            { name: "TensorFlow", level: 4 }
         ]
     },
     {
-        key: "databases",
+        key: "db",
         label: "Databases & Big Data",
         icon: <Database className="h-5 w-5 mr-2" />,
+        color: "text-green-700",
+        bgPanel: "bg-green-50",
+        dot: "bg-green-500",
         skills: [
-            { name: "Oracle" },
-            { name: "MySQL" },
-            { name: "Snowflake" },
-            { name: "BigQuery" },
-            { name: "SQL" },
-            { name: "NoSQL" },
+            { name: "Oracle", level: 4 },
+            { name: "Snowflake", level: 4 },
+            { name: "BigQuery", level: 3 },
+            { name: "NoSQL", level: 3 },
+            { name: "SQL", level: 5 }
         ]
     },
     {
-        key: "engineering",
+        key: "eng",
         label: "Data Engineering",
         icon: <Server className="h-5 w-5 mr-2" />,
+        color: "text-orange-700",
+        bgPanel: "bg-orange-50",
+        dot: "bg-orange-500",
         skills: [
-            { name: "ETL Pipelines" },
-            { name: "Airflow" },
-            { name: "Kafka" },
-            { name: "REST APIs" },
-            { name: "Data Packaging" },
+            { name: "ETL Pipelines", level: 5 },
+            { name: "Airflow", level: 4 },
+            { name: "Kafka", level: 3 },
+            { name: "REST APIs", level: 4 }
         ]
     },
     {
         key: "viz",
         label: "Visualization & Analysis",
-        icon: <BarChart className="h-5 w-5 mr-2" />,
+        icon: <Cpu className="h-5 w-5 mr-2" />,
+        color: "text-pink-700",
+        bgPanel: "bg-pink-50",
+        dot: "bg-pink-500",
         skills: [
-            { name: "Power BI" },
-            { name: "Tableau" },
-            { name: "Matplotlib" },
-            { name: "Seaborn" },
-            { name: "Pandas" },
+            { name: "Power BI", level: 4 },
+            { name: "Tableau", level: 4 },
+            { name: "Matplotlib", level: 4 },
+            { name: "Seaborn", level: 3 }
         ]
     },
     {
         key: "devops",
         label: "DevOps & Infrastructure",
         icon: <Cloud className="h-5 w-5 mr-2" />,
+        color: "text-indigo-700",
+        bgPanel: "bg-indigo-50",
+        dot: "bg-indigo-500",
         skills: [
-            { name: "Docker" },
-            { name: "Linux" },
-            { name: "Git" },
-            { name: "CI/CD" },
-            { name: "Cloud Architecture" },
+            { name: "Docker", level: 4 },
+            { name: "Linux", level: 5 },
+            { name: "Git", level: 5 },
+            { name: "Cloud Architecture", level: 3 }
         ]
     }
 ];
 
 const TechnicalSkillsSection = () => {
-    const [activeTab, setActiveTab] = useState(SKILL_CATEGORIES[0].key);
-
-    const activeCategory = SKILL_CATEGORIES.find(cat => cat.key === activeTab);
+    const [active, setActive] = useState(1);
+    const activeCat = SKILL_CATEGORIES[active];
 
     return (
         <section id="skills" className="py-20 bg-white">
             <div className="container mx-auto px-4">
-                <div className="text-center space-y-4 mb-12">
-                    <Badge className="bg-success/10 text-success border-success/20">Technical Skills</Badge>
-                    <h2 className="text-4xl font-bold text-professional">Technical Skills</h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Comprehensive expertise across the full technology stack
-                    </p>
-                </div>
-                {/* Tab Navigation */}
-                <div className="flex flex-wrap justify-center gap-3 mb-10">
-                    {SKILL_CATEGORIES.map(cat => (
+                <h2 className="text-5xl font-bold text-center mb-2">Technical Skills</h2>
+                <p className="text-lg text-center text-muted-foreground mb-10">
+                    Comprehensive expertise across the full technology stack
+                </p>
+                {/* Tab bar */}
+                <div className="flex flex-wrap justify-center gap-2 mb-12">
+                    {SKILL_CATEGORIES.map((cat, idx) => (
                         <button
                             key={cat.key}
-                            onClick={() => setActiveTab(cat.key)}
-                            className={`flex items-center px-4 py-2 rounded-full border transition-all
-                ${activeTab === cat.key
-                                    ? "bg-primary text-white border-primary"
-                                    : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"}`}
-                            style={{ minWidth: 180, fontWeight: 500 }}
+                            className={`
+                flex flex-col items-center justify-center px-7 py-3 rounded-xl border
+                min-w-[160px] transition-all
+                ${active === idx
+                                    ? "border-blue-500 shadow bg-white"
+                                    : "border-gray-200 bg-gray-50 hover:bg-gray-100"
+                                }
+              `}
+                            style={{
+                                borderColor: active === idx ? "#5C6DFF" : undefined
+                            }}
+                            onClick={() => setActive(idx)}
                         >
-                            {cat.icon}
-                            {cat.label}
+                            <span className={`mb-1 ${cat.color}`}>{cat.icon}</span>
+                            <span className="font-medium text-[15px]">{cat.label}</span>
                         </button>
                     ))}
                 </div>
-                {/* Skills List */}
-                <div className="bg-gradient-subtle rounded-xl p-8 shadow-card max-w-2xl mx-auto">
-                    <h3 className="text-xl font-bold text-professional mb-5 text-center">{activeCategory.label}</h3>
-                    <ul className="divide-y divide-gray-200">
-                        {activeCategory.skills.map(sk => (
-                            <li key={sk.name} className="flex items-center py-3 text-lg justify-between">
-                                <span className="font-medium">{sk.name}</span>
-                                {/* Visual "dots" for rating proficiency, if needed */}
-                                {/* <span className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span 
-                      key={i}
-                      className={`inline-block h-2 w-2 rounded-full ${i < (sk.level || 4) ? 'bg-primary' : 'bg-gray-300'}`}
-                    />
-                  ))}
-                </span> */}
-                            </li>
+                {/* Category Panel */}
+                <div
+                    className={`rounded-2xl ${activeCat.bgPanel} p-8 max-w-3xl mx-auto shadow-md`}
+                >
+                    <div className="flex items-center mb-6">
+                        <span className={`${activeCat.color} mr-2`}>{activeCat.icon}</span>
+                        <span className="font-bold text-xl">{activeCat.label}</span>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        {activeCat.skills.map(({ name, level }) => (
+                            <div
+                                key={name}
+                                className="flex items-center justify-between px-6 py-3 rounded-lg bg-white shadow-sm"
+                            >
+                                <span className="text-professional font-semibold bg-gray-50 px-3 py-1 rounded">{name}</span>
+                                <span className="flex items-center space-x-1">
+                                    {[0, 1, 2, 3, 4].map((dot, dIdx) => (
+                                        <span
+                                            key={dIdx}
+                                            className={`inline-block h-2.5 w-2.5 rounded-full 
+                        ${dIdx < level ? activeCat.dot : "bg-gray-300"}
+                      `}
+                                        />
+                                    ))}
+                                </span>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>

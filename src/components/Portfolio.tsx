@@ -9,6 +9,7 @@ import TechnicalSkillsSection from "@/components/TechnicalSkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ProfessionalExperienceSection from "@/components/ProfessionalExperienceSection";
 import AboutMeSection from "@/components/AboutMeSection";
+import HeroSection from "@/components/HeroSection";
 
 import { 
   Github, 
@@ -167,6 +168,9 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
+      <HeroSection />
+
+      {/* About Me Section */}
       <AboutMeSection />
 
 

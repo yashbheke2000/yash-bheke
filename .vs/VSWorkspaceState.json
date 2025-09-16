@@ -3,9 +3,8 @@
     "",
     "\\public",
     "\\src",
-    "\\src\\components",
     "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\components\\AboutMeSection.tsx",
+  "SelectedNode": "\\src\\components",
   "PreviewInSolutionExplorer": false
 }
