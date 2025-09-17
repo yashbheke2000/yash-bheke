@@ -3,8 +3,10 @@
     "",
     "\\public",
     "\\src",
+    "\\src\\assets",
+    "\\src\\components",
     "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\components",
+  "SelectedNode": "\\src\\components\\HeroSection.tsx",
   "PreviewInSolutionExplorer": false
 }

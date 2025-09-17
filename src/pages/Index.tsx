@@ -1,127 +1,204 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, User, Briefcase } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Progress } from '@/components/ui/progress';
+import ContactSection from '@/components/ContactSection';
+import EducationLeadershipSection from '@/components/EducationLeadershipSection';
+import TechnicalSkillsSection from "@/components/TechnicalSkillsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import ProfessionalExperienceSection from "@/components/ProfessionalExperienceSection";
+import AboutMeSection from "@/components/AboutMeSection";
+import HeroSection from "@/components/HeroSection";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded bg-gradient-primary"></div>
-              <span className="text-xl font-semibold text-professional">Professional Hub</span>
-            </div>
-            <div className="flex space-x-4">
-              <Link to="/portfolio">
-                <Button variant="outline">
-                  <User className="mr-2 h-4 w-4" />
-                  Portfolio
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+import {
+    Github,
+    Linkedin,
+    Mail,
+    Phone,
+    MapPin,
+    Calendar,
+    ExternalLink,
+    Code,
+    Database,
+    Brain,
+    Award,
+    GraduationCap,
+    Briefcase,
+    ChevronDown,
+    Star,
+    TrendingUp,
+    Zap
+} from 'lucide-react';
+import profilePhoto from '@/assets/profile-photo.jpg';
+import techBackground from '@/assets/tech-background.jpg';
 
-      {/* Main Content */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center space-y-8 mb-16">
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Choose Your Path
-            </Badge>
-            <h1 className="text-5xl font-bold text-professional leading-tight">
-              Professional Services & 
-              <span className="bg-gradient-primary bg-clip-text text-transparent"> Portfolio Hub</span>
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Explore career development resources and view professional portfolios
-            </p>
-          </div>
+const Portfolio = () => {
+    const [activeSection, setActiveSection] = useState('about');
+    const [isVisible, setIsVisible] = useState(false);
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="shadow-card border-0 hover:shadow-elegant transition-all duration-300 group cursor-pointer">
-              <CardHeader className="bg-gradient-primary text-white">
-                <CardTitle className="text-2xl flex items-center">
-                  <Briefcase className="mr-3 h-6 w-6" />
-                  Portfolio Strategist
-                </CardTitle>
-                <CardDescription className="text-white/90">
-                  AI-powered career portfolio development and strategy
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-8 space-y-4">
-                <p className="text-professional/80 leading-relaxed">
-                  Get personalized recommendations from our expert Career Portfolio Strategist. 
-                  Transform your professional presentation with strategic guidance and actionable insights.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2 text-sm text-success">
-                    <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                    <span>Personalized portfolio strategy</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-success">
-                    <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                    <span>Industry-specific recommendations</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-success">
-                    <div className="w-1.5 h-1.5 rounded-full bg-success"></div>
-                    <span>Implementation timeline</span>
-                  </div>
+    useEffect(() => {
+        setIsVisible(true);
+
+        const handleScroll = () => {
+            const sections = ['about', 'experience', 'projects', 'skills', 'education','contact'];
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(section);
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const skills = {
+        'Programming Languages': [
+            { name: 'Python', level: 95 },
+            { name: 'Java', level: 90 },
+            { name: 'TypeScript/JavaScript', level: 88 },
+            { name: 'SQL', level: 95 },
+            { name: 'C#', level: 80 }
+        ],
+        'Data & Analytics': [
+            { name: 'Machine Learning', level: 92 },
+            { name: 'Data Engineering', level: 95 },
+            { name: 'ETL Pipelines', level: 90 },
+            { name: 'Big Data', level: 85 },
+            { name: 'Statistical Analysis', level: 88 }
+        ],
+        'Technologies & Tools': [
+            { name: 'Docker', level: 85 },
+            { name: 'Oracle Database', level: 90 },
+            { name: 'REST APIs', level: 92 },
+            { name: 'Git', level: 90 },
+            { name: 'Linux/RedHat', level: 85 }
+        ]
+    };
+
+    const projects = [
+        {
+            title: 'SafeStreet Chatbot',
+            period: 'January 2025 – February 2025',
+            description: 'Multimodal real-time safety chatbot utilizing Gemini-1.5 Pro with Google News and Brave Search APIs',
+            highlights: [
+                'Implemented retrieval-augmented generation (RAG) pipelines for live crime statistics',
+                'Integrated Vision-LLM pipelines with YOLOv8 + Gemini Vision for scene understanding',
+                'Achieved sub 2 seconds response time on standard 500-token queries',
+                'Extended NLU stack to support 20+ languages'
+            ],
+            tech: ['Gemini-1.5 Pro', 'YOLOv8', 'RAG', 'Python', 'API Integration']
+        },
+        {
+            title: 'Airbnb Pricing Tool',
+            period: 'October 2024 – December 2024',
+            description: 'ML-powered pricing optimization tool for Airbnb hosts with 93% prediction accuracy',
+            highlights: [
+                'Processed 7k+ listings across 106 columns with advanced feature engineering',
+                'Optimized 600-tree Random Forest achieving R² 0.83, MAE $23.9, RMSE $65.6',
+                '40% error reduction versus regularized linear model',
+                'Built self-serving pricing tool via shareable Google Colab'
+            ],
+            tech: ['Random Forest', 'SHAP', 'Python', 'Scikit-learn', 'Feature Engineering']
+        }
+    ];
+
+    const experience = {
+        title: 'Software Developer (Data Analytics and Engineering)',
+        company: 'Accelya, Mumbai',
+        period: 'September 2022 – July 2024',
+        achievements: [
+            'Built near real-time analytics dashboards reducing latency from 60+ minutes to under 2 minutes (97% improvement)',
+            'Designed end-to-end data pipelines reducing SLA lag by 27% for 20+ business analysts across 13 teams',
+            'Led 9 A/B testing experiments resulting in 22% increase in predictive accuracy',
+            'Resolved 52 production issues across C-based modules, TypeScript microservices, and Python/SQL pipelines',
+            'Automated analytics environment setup, cutting deployment time from 1 day to 30 minutes (95% faster)',
+            'Engineered ETL workflows processing 500+ GB data with 99.95% uptime over 6 months'
+        ]
+    };
+
+    return (
+        <div className="min-h-screen bg-gradient-subtle">
+            {/* Navigation */}
+            <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b z-50">
+                <div className="container mx-auto px-4 py-3">
+                    <div className="flex justify-between items-center">
+                        <div className="text-xl font-bold text-professional">Yash Krishna Bheke</div>
+                        <div className="hidden md:flex space-x-6">
+                            {['About', 'Experience', 'Projects', 'Skills', 'Education'].map(item => (
+                                <button
+                                    key={item}
+                                    onClick={() => scrollToSection(item.toLowerCase())}
+                                    className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === item.toLowerCase() ? 'text-primary' : 'text-muted-foreground'
+                                        }`}
+                                >
+                                    {item}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="flex space-x-3">
+                            <Button variant="outline" size="sm" asChild>
+                                <a href="https://linkedin.com/in/yash-bheke" target="_blank" rel="noopener noreferrer">
+                                    <Linkedin className="h-4 w-4" />
+                                </a>
+                            </Button>
+                            <Button variant="outline" size="sm" asChild>
+                                <a href="https://github.com/yashbheke2000" target="_blank" rel="noopener noreferrer">
+                                    <Github className="h-4 w-4" />
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <Button className="w-full bg-gradient-primary text-white group-hover:scale-105 transition-transform">
-                  Start Portfolio Analysis
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
+            </nav>
 
-            <Card className="shadow-card border-0 hover:shadow-elegant transition-all duration-300 group cursor-pointer">
-              <CardHeader className="bg-gradient-professional text-white">
-                <CardTitle className="text-2xl flex items-center">
-                  <User className="mr-3 h-6 w-6" />
-                  Yash's Portfolio
-                </CardTitle>
-                <CardDescription className="text-white/90">
-                  Software Developer & Data Engineering Specialist
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-8 space-y-4">
-                <p className="text-professional/80 leading-relaxed">
-                  Explore the professional portfolio of Yash Krishna Bheke, featuring expertise in 
-                  data analytics, machine learning, and scalable system architecture.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2 text-sm text-primary">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    <span>2+ years at Accelya</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-primary">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    <span>AI & ML Projects</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-primary">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    <span>Data Engineering Expertise</span>
-                  </div>
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* About Me Section */}
+            <AboutMeSection />
+
+
+            {/* Experience Section */}
+            <ProfessionalExperienceSection />
+
+
+            {/* Projects Section */}
+            <ProjectsSection />
+
+            {/* Skills Section */}
+            <TechnicalSkillsSection />
+
+
+            <EducationLeadershipSection />
+
+            {/* Contact Section */}
+            <ContactSection />
+
+            {/* Footer */}
+            <footer className="bg-professional text-white py-12">
+                <div className="container mx-auto px-4 text-center">
+                    <div className="mt-8 pt-8 border-t border-white/20 text-white/60">
+                        <p>&copy; 2025 Yash Krishna Bheke. All rights reserved.</p>
+                    </div>
                 </div>
-                <Link to="/portfolio" className="block">
-                  <Button className="w-full bg-gradient-professional text-white group-hover:scale-105 transition-transform">
-                    View Portfolio
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
+            </footer>
         </div>
-      </section>
-    </div>
-  );
+    );
 };
 
-export default Index;
+export default Portfolio;
