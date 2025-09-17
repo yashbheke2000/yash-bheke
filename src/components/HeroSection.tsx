@@ -21,7 +21,7 @@ const HeroSection = () => (
                 </div>
                 <div className="flex items-center text-blue-200 mb-6">
                     <MapPin className="h-5 w-5 mr-1" />
-                    <span className="font-medium">Cincinnati, OH</span>
+                    <span className="font-medium">United States</span>
                 </div>
                 <p className="max-w-xl mb-10 text-white/90 text-lg">
                     Experienced Software Developer specializing in Data Analytics and Engineering with a strong foundation in machine learning, real-time systems, and full-stack development.<br />

@@ -41,7 +41,7 @@ const ContactSection = () => {
                     <div>
                         <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
                         <p className="mb-6 text-muted-foreground">
-                            Whether you're looking to collaborate on a project, discuss opportunities, or just want to say hello, I'd love to hear from you. I typically respond within 24 hours.
+                            Whether you're looking to collaborate on a project, discuss opportunities or just want to say hello, I'd love to hear from you. I typically respond within 24 hours.
                         </p>
                         <div className="space-y-4">
                             <Card className="flex items-center p-4 space-x-3">
@@ -55,7 +55,7 @@ const ContactSection = () => {
                                 <Phone className="h-6 w-6 text-green-600" />
                                 <div>
                                     <div className="font-semibold text-professional">Phone</div>
-                                    <div className="text-sm text-muted-foreground">(513) 276-5130</div>
+                                    <div className="text-sm text-muted-foreground">+1 (513) 276-5130</div>
                                 </div>
                             </Card>
                             <Card className="flex items-center p-4 space-x-3">

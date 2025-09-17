@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/badge";
 const experience = {
     title: "Software Developer (Data Analytics and Engineering)",
     company: "Accelya, Mumbai",
-    period: "September 2022 – July 2024",
+    period: "September 2022 - July 2024",
     location: "Mumbai, India",
     achievements: [
-        "Built near real-time analytics dashboards reducing latency from 60+ minutes to under 2 minutes (97% improvement)",
-        "Designed end-to-end data pipelines reducing SLA lag by 27% for 20+ business analysts across 13 teams",
-        "Led 9 A/B testing experiments resulting in 22% increase in predictive accuracy",
-        "Resolved 52 production issues across C-based modules, TypeScript microservices, and Python/SQL pipelines",
-        "Automated analytics environment setup, cutting deployment time from 1 day to 30 minutes (95% faster)",
+        "Reduced analytics dashboard latency by 97% (from 60+ min to <2 min) for 200+ enterprise clients",
+        "Reduced SLA lag by 27% by designing and implementing end-to-end data pipelines collaborating with 30+ business analysts across 13 teams",
+        "Led 9 A/B testing experiments resulting in 22% increase in predictive accuracy and 16% reduction in financial reporting errors",
+        "Resolved 52 production issues and drove 16 Change Requests across C-based modules, TypeScript microservices, and Python/SQL pipelines",
+        "Automated analytics/model environment setup, cutting deployment time from 1 day to 30 minutes (95% faster) and reduced infrastructure spend by 23%",
         "Engineered ETL workflows processing 500+ GB data with 99.95% uptime over 6 months"
     ],
-    tech: ["Java", "Python", "TypeScript", "SQL", "REST APIs", "ETL", "A/B Testing"]
+    tech: ["Java", "Python", "TypeScript", "SQL", "REST APIs", "ETL", "A/B Testing", "Pro*C"]
 };
 
 const iconForAchievement = (idx) => {

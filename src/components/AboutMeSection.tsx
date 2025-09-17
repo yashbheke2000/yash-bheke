@@ -33,14 +33,14 @@ const AboutMeSection = () => (
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                 {/* Left: Text Block */}
                 <div>
-                    <p className="text-lg text-professional font-medium mb-6">
-                        I'm a dedicated Software Developer with expertise in Data Analytics and Engineering, currently pursuing my Master's in Information Systems at the University of Cincinnati. My journey began with a Bachelor's in Electronics and Telecommunications, which provided a strong foundation in technical problem-solving.
+                    <p className="text-lg text-professional mb-6">
+                        I'm a dedicated Software Developer with expertise in Data Analytics and Engineering, currently pursuing my Master's in Information Systems at the University of Cincinnati. My journey began with a Bachelor's in Electronics and Telecommunications, which provided a strong foundation in technical problem-solving and critical thinking.
                     </p>
                     <p className="text-lg text-professional mb-6">
-                        At Accelya, I developed real-time analytics dashboards and engineered data pipelines that significantly improved system performance and business outcomes. I'm passionate about building scalable solutions using cutting-edge technologies like GenAI, machine learning, and cloud platforms.
+                        At Accelya, I developed real-time analytics dashboards and engineered data pipelines that significantly improved system performance and business outcomes. I'm passionate about building scalable solutions using cutting-edge technologies like GenAI, machine learning and cloud platforms.
                     </p>
                     <p className="text-lg text-professional mb-6">
-                        When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge through technical workshops and community events.
+                        I take pride in my ability to break down complex problems and to collaborate with and lead various cross-functional teams. When I'm not coding, I enjoy exploring new technologies, learning new industry trends and sharing knowledge through technical workshops and community events.
                     </p>
                     <div className="flex space-x-24 mt-12">
                         <div className="text-center">

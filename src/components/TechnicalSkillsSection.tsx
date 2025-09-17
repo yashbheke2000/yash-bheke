@@ -14,8 +14,8 @@ const SKILL_CATEGORIES = [
             { name: "JavaScript", level: 4 },
             { name: "TypeScript", level: 4 },
             { name: "Java", level: 4 },
-            { name: "C", level: 3 },
-            { name: "C++", level: 3 }
+            { name: "R", level: 4 },
+            { name: "C", level: 3 }
         ]
     },
     {
@@ -42,9 +42,8 @@ const SKILL_CATEGORIES = [
         dot: "bg-green-500",
         skills: [
             { name: "Oracle", level: 4 },
-            { name: "Snowflake", level: 4 },
             { name: "BigQuery", level: 3 },
-            { name: "NoSQL", level: 3 },
+            { name: "NoSQL", level: 4 },
             { name: "SQL", level: 5 }
         ]
     },
@@ -56,8 +55,9 @@ const SKILL_CATEGORIES = [
         bgPanel: "bg-orange-50",
         dot: "bg-orange-500",
         skills: [
-            { name: "ETL Pipelines", level: 5 },
-            { name: "Airflow", level: 4 },
+            { name: "ETL Pipelines", level: 4 },
+            { name: "Databricks", level: 4 },
+            { name: "Snowflake", level: 4 },
             { name: "Kafka", level: 3 },
             { name: "REST APIs", level: 4 }
         ]
@@ -72,8 +72,7 @@ const SKILL_CATEGORIES = [
         skills: [
             { name: "Power BI", level: 4 },
             { name: "Tableau", level: 4 },
-            { name: "Matplotlib", level: 4 },
-            { name: "Seaborn", level: 3 }
+            { name: "Excel", level: 4 }
         ]
     },
     {
@@ -87,7 +86,8 @@ const SKILL_CATEGORIES = [
             { name: "Docker", level: 4 },
             { name: "Linux", level: 5 },
             { name: "Git", level: 5 },
-            { name: "Cloud Architecture", level: 3 }
+            { name: "Azure", level: 3 },
+            { name: "AWS", level: 4 }
         ]
     }
 ];
