@@ -43,8 +43,9 @@ const SKILL_CATEGORIES = [
         skills: [
             { name: "Oracle", level: 4 },
             { name: "BigQuery", level: 3 },
-            { name: "NoSQL", level: 4 },
-            { name: "SQL", level: 5 }
+            { name: "MySQL", level: 5 },
+            { name: "PostgreSQL", level: 5 },
+            { name: "MongoDB", level: 4 }
         ]
     },
     {
