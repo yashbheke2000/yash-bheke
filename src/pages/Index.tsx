@@ -131,6 +131,10 @@ const Portfolio = () => {
         ]
     };
 
+    const contact = {
+        email: 'yash.bheke2000@gmail.com'
+    }
+
     return (
         <div className="min-h-screen bg-gradient-subtle">
             {/* Navigation */}
@@ -139,7 +143,7 @@ const Portfolio = () => {
                     <div className="flex justify-between items-center">
                         <div className="text-xl font-bold text-professional">Yash Krishna Bheke</div>
                         <div className="hidden md:flex space-x-6">
-                            {['About', 'Experience', 'Projects', 'Skills', 'Education'].map(item => (
+                            {['About', 'Experience', 'Projects', 'Skills', 'Education','Contact'].map(item => (
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(item.toLowerCase())}
