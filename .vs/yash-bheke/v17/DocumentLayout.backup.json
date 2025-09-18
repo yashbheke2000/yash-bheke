@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\TechnicalSkillsSection.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\TechnicalSkillsSection.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -47,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -62,47 +62,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HeroSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\HeroSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\HeroSection.tsx",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\HeroSection.tsx",
               "RelativeToolTip": "src\\components\\HeroSection.tsx",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAABcAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAIBJwBcAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T23:54:15.562Z"
+              "WhenOpened": "2025-09-16T23:54:15.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AboutMeSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\AboutMeSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\AboutMeSection.tsx",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\AboutMeSection.tsx",
               "RelativeToolTip": "src\\components\\AboutMeSection.tsx",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACMAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAIBJwCMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T23:33:43.092Z"
+              "WhenOpened": "2025-09-16T23:33:43.092Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ProfessionalExperienceSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\ProfessionalExperienceSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\ProfessionalExperienceSection.tsx",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\ProfessionalExperienceSection.tsx",
               "RelativeToolTip": "src\\components\\ProfessionalExperienceSection.tsx",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAIBJwEgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T23:30:18.139Z"
+              "WhenOpened": "2025-09-16T23:30:18.139Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ProjectsSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\ProjectsSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\ProjectsSection.tsx",
@@ -110,11 +113,12 @@
               "RelativeToolTip": "src\\components\\ProjectsSection.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T23:27:14.286Z"
+              "WhenOpened": "2025-09-16T23:27:14.286Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TechnicalSkillsSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\TechnicalSkillsSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\TechnicalSkillsSection.tsx",
@@ -127,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EducationLeadershipSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\EducationLeadershipSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\EducationLeadershipSection.tsx",
@@ -135,24 +139,25 @@
               "RelativeToolTip": "src\\components\\EducationLeadershipSection.tsx",
               "ViewState": "AgIAAFcAAAAAAAAAAAAAwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T23:17:10.565Z"
+              "WhenOpened": "2025-09-16T23:17:10.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ContactSection.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\ContactSection.tsx",
               "RelativeDocumentMoniker": "src\\components\\ContactSection.tsx",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\ContactSection.tsx",
               "RelativeToolTip": "src\\components\\ContactSection.tsx",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAADkAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAIBJwDkAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-16T22:55:43.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Portfolio.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\components\\Portfolio.tsx",
               "RelativeDocumentMoniker": "src\\components\\Portfolio.tsx",
@@ -160,23 +165,25 @@
               "RelativeToolTip": "src\\components\\Portfolio.tsx",
               "ViewState": "AgIAAMcAAAAAAAAAAAAAwN0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T22:43:39.457Z"
+              "WhenOpened": "2025-09-16T22:43:39.457Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.tsx",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\pages\\Index.tsx",
               "RelativeDocumentMoniker": "src\\pages\\Index.tsx",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\pages\\Index.tsx",
               "RelativeToolTip": "src\\pages\\Index.tsx",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKoAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAIBJwKoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-16T22:42:49.901Z"
+              "WhenOpened": "2025-09-16T22:42:49.901Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "App.css",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\App.css",
               "RelativeDocumentMoniker": "src\\App.css",
@@ -184,19 +191,21 @@
               "RelativeToolTip": "src\\App.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-16T22:42:47.035Z"
+              "WhenOpened": "2025-09-16T22:42:47.035Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\index.css",
               "RelativeDocumentMoniker": "src\\index.css",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\src\\index.css",
               "RelativeToolTip": "src\\index.css",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-16T22:42:43.42Z"
+              "WhenOpened": "2025-09-16T22:42:43.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -212,15 +221,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\yashb\\OneDrive\\Documents\\Assignments\\Career Management\\AIML Resume\\Yash_Portfolio\\yash-bheke\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-16T22:42:11.62Z"
+              "WhenOpened": "2025-09-16T22:42:11.62Z",
+              "EditorCaption": ""
             }
           ]
         }

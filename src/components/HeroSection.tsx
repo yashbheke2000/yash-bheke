@@ -33,11 +33,18 @@ const HeroSection = () => (
                             <FileDown className="mr-2 h-5 w-5" /> Download Resume
                         </button>
                     </a>
-                    <a href="#projects">
-                        <button className="px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-[#152045] font-semibold rounded-lg text-lg flex items-center transition">
-                            View My Work
-                        </button>
-                    </a>
+                    <button
+                        className="px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-[#152045] font-semibold rounded-lg text-lg flex items-center transition"
+                        onClick={() => {
+                            const el = document.getElementById('experience');
+                            if (el) {
+                                el.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
+                        View My Work
+                    </button>
+
                 </div>
                 <div className="flex space-x-7 justify-center md:justify-start mt-2 pt-3 text-white text-2xl">
                     <a href="https://github.com/yashbheke2000" target="_blank" rel="noopener noreferrer">
