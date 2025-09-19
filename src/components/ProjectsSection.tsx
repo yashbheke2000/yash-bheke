@@ -81,7 +81,7 @@ const ProjectsSection = () => (
                                 </ul>
                             </div>
                             <div className="mb-5">
-                                <div className="font-semibold mb-1 mt-2">Technologies:</div>
+                                <div className="font-semibold mb-1 mt-2">Skills and Technologies:</div>
                                 <div className="flex flex-wrap gap-2">
                                     {p.tech.map((t, idx) => (
                                         <Badge key={idx} variant="outline" className="text-xs py-1 px-3">

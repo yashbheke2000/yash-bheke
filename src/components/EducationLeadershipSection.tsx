@@ -31,9 +31,9 @@ const leadership = [
 ];
 
 const highlights = [
-    { color: "bg-blue-500", text: "Currently pursuing advanced coursework in Generative AI and Statistical Computing" },
-    { color: "bg-purple-500", text: "Strong foundation in Electronics and Telecommunications Engineering" },
-    { color: "bg-green-500", text: "Active in technical community building and knowledge sharing" },
+    { color: "bg-blue-500", text: "Pursuing advanced graduate coursework in Generative AI, Statistical Computing, and Data Analytics to build deep expertise in modern machine learning approaches." },
+    { color: "bg-purple-500", text: "Recognized for quickly mastering new technical concepts and applying them in real-world academic and project settings." },
+    { color: "bg-green-500", text: "Proactively engaged in technical community leadership, organizing workshops and sharing knowledge to foster collaborative learning and innovation." },
 ];
 
 const EducationLeadershipSection = () => (
