@@ -1,4 +1,4 @@
-﻿import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Calendar } from "lucide-react";
 import projectImg1 from "@/assets/safestreet.jpg"; // Example import for SafeStreet Chatbot image
 import projectImg2 from "@/assets/airbnb.jpg";     // Example import for Airbnb Pricing Tool image
