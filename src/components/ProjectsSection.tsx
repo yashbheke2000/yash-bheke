@@ -90,15 +90,10 @@ const ProjectsSection = () => (
                                     ))}
                                 </div>
                             </div>
-                            <div className="mt-auto flex space-x-3 pt-2">
-                                <a href={p.code} target="_blank" rel="noopener noreferrer" className="flex-1">
-                                    <button className="w-full flex items-center justify-center border border-neutral-300 hover:bg-neutral-100 text-professional font-medium py-2 rounded-lg transition">
-                                        <span className="mr-2">🡥</span> View Code
-                                    </button>
-                                </a>
-                                <a href={p.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                            <div className="mt-auto pt-2">
+                                <a href={p.code} target="_blank" rel="noopener noreferrer" className="block">
                                     <button className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition">
-                                        <span className="mr-2">🡥</span> Live Demo
+                                        <span className="mr-2">🡥</span> View Code
                                     </button>
                                 </a>
                             </div>
