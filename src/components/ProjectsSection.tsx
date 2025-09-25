@@ -33,7 +33,7 @@ const projects = [
             "Designed self-serving pricing tool interface"
         ],
         tech: ["Python", "Random Forest", "Feature Engineering", "Data Analysis", "Machine Learning"],
-        code: "https://github.com/example/airbnb-pricing",
+        code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
         demo: "https://demo.airbnbpricing.com",
         img: projectImg2 // Use your actual import path
     }
