@@ -8,42 +8,48 @@ import projectImg3 from "@/assets/airbnb.jpg";
 const projects = [
     {
         title: "SafeStreet",
-        period: "2024",
-        description: "A comprehensive safety platform for urban navigation and community awareness.",
+        period: "2025",
+        description: "Architected a multimodal, real-time safety chatbot for homebuyers and urban commuters, combining LLMs, live search APIs, and image analysis for proactive risk guidance.",
         highlights: [
-            "Real-time safety alerts and incident reporting",
-            "Community-driven safety ratings",
-            "Interactive safety heat maps"
+            "Enabled live crime stats, risk indices, and safest housing recommendations via AI-powered map visualizations",
+            "Integrated Vision-LLM (YOLOv8 + Gemini Vision) pipelines to parse crime-scene images and provide actionable mitigation steps",
+            "Expanded support to 20+ languages, scaling safety resources for diverse communities",
+            "Engineered rate-limited APIs and geo-aware prompts for rapid incident response (<2 seconds on 500-token queries)",
+            "Laid the foundation for push alerts, emergency hand-offs, and complaint triage extensions"
         ],
-        tech: ["React", "Node.js", "MongoDB", "Google Maps API"],
+        tech: ["Gemini-1.5 Pro", "YOLOv8", "NLU", "Vision-LLM", "RAG", "Dify", "Google News API", "Dify", "Python"],
         img: projectImg1,
-        code: "https://github.com/yourusername/safestreet"
+        code: "https://github.com/harshitaaa006/GenAIProject"
     },
     {
         title: "Mood Disorder Analysis",
         period: "2024",
-        description: "Machine learning application for analyzing and tracking mood patterns.",
+        description: "Developed a predictive analytics pipeline for mood disorders, leveraging clinical and behavioral data to support early, targeted intervention.",
         highlights: [
-            "Advanced sentiment analysis",
-            "Predictive mood tracking",
-            "Data visualization dashboard"
+            "Processed 40,000+ patient records and engineered 60+ features for comprehensive psychosocial modeling",
+            "Benchmarked Decision Tree, Random Forest, and Extra Trees models with nested cross-validation, achieving ROC-AUC 1.00 and perfect recall on minority class",
+            "Applied SHAP and permutation importance to pinpoint top predictive biomarkers, delivering interpretable results for clinicians",
+            "Visualized key risk indicators, empowering personalized diagnosis and follow-up strategies",
+            "Automated cleaning, feature scaling, and validation with reproducible scikit-learn pipelines"
         ],
-        tech: ["Python", "TensorFlow", "Flask", "React"],
+        tech: ["Python", "Pandas", "Scikit-learn", "Random Forest", "Extra Trees", "SHAP", "ETL", "Data Visualization"],
         img: projectImg2,
-        code: "https://github.com/yourusername/mood-disorder"
+        code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing"
     },
     {
-        title: "Airbnb Clone",
-        period: "2023",
-        description: "Full-stack property rental platform with booking and payment integration.",
+        title: "Airbnb Pricing Tool",
+        period: "2024",
+        description: "Developed a robust pricing intelligence application for short-term rental hosts, leveraging ML on 7,000+ listings for informed, instant rate optimization.",
         highlights: [
-            "User authentication and profiles",
-            "Property search and filtering",
-            "Booking management system"
+            "Automated cleaning/feature engineering for property, guest ratio, and dynamic stay attributes",
+            "Optimized a 600-tree Random Forest (R²=0.83, MAE $23.9), reducing errors by 40% over linear models",
+            "Benchmarked and outperformed Gradient Boosting in grid tests",
+            "Identified top 5 price-driving features using SHAP and permutation importance",
+            "Delivered a self-service Colab dashboard for hosts to tweak listing details and get instant, model-backed pricing (93% band coverage)"
         ],
-        tech: ["React", "Express", "PostgreSQL", "Stripe"],
+        tech: ["Python", "Random Forest", "sklearn", "Pandas", "SHAP", "Google Colab"],
         img: projectImg3,
-        code: "https://github.com/yourusername/airbnb-clone"
+        code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing"
     }
 ];
 const ProjectsSection = () => {
