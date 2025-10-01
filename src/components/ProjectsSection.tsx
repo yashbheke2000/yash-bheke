@@ -67,7 +67,7 @@ const ProjectsSection = () => {
                         Innovative solutions built with cutting-edge technologies
                     </p>
                 </div>
-                <div className="relative flex items-center max-w-4xl mx-auto">
+                <div className="relative flex items-center w-full mx-auto">
                     {/* Left Arrow */}
                     <button
                         className={`absolute left-0 z-20 bg-white rounded-full shadow-lg p-3 hover:bg-blue-50 transition ${startIdx === 0 ? "opacity-40 cursor-not-allowed" : ""}`}
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
                     {/* Project Cards */}
                     <div className="flex gap-8 w-full justify-center">
                         {projects.slice(startIdx, startIdx + projectsToShow).map((p, i) => (
-                            <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col w-[32rem]">
+                            <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col w-[40rem]">
                                 <div className="w-full h-48 overflow-hidden">
                                     <img
                                         src={p.img}
