@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Calendar } from "lucide-react";
-import projectImg1 from "@/assets/safestreet.jpg"; // Example import for SafeStreet Chatbot image
-import projectImg2 from "@/assets/airbnb.jpg";     // Example import for Airbnb Pricing Tool image
+import projectImg1 from "@/assets/safestreet.jpg";
+import projectImg2 from "@/assets/mood-disorder.jpg"
+import projectImg3 from "@/assets/airbnb.jpg";     
 
 const projects = [
     {
@@ -18,7 +19,25 @@ const projects = [
         tech: ["Gemini-1.5 Pro", "Vision-LLM", "RAG", "Python", "NLP"],
         code: "https://github.com/example/safestreet",
         demo: "https://demo.safestreet.com",
-        img: projectImg1 // Use your actual import path
+        img: projectImg1
+    },
+    {
+        title: "Mood Disorder Prediction",
+        period: "November 2024 – December 2024",
+        description:
+            "Developed a predictive analytics solution for mood disorder diagnosis using advanced machine learning, feature engineering, and model interpretability techniques.",
+        highlights: [
+            "Cleaned, transformed, and engineered features from complex psychological and behavioral survey data",
+            "Benchmarked and optimized multiple models (Random Forest, KNN, Decision Tree, Logistic Regression), delivering top accuracy and F1 gains",
+            "Applied hyperparameter tuning and cross-validation for robust performance metrics and real-world reliability",
+            "Leveraged SHAP for interpretable AI, visualizing most influential mental health drivers and model reasoning",
+            "Automated preprocessing, data scaling, and validation using scikit-learn Pipelines for reproducible results",
+            "Delivered comprehensive reporting and actionable insights for potential early mental health intervention"
+        ],
+        tech: ["Python", "Pandas", "Scikit-learn", "SHAP", "Seaborn", "Random Forest", "ETL", "Feature Engineering", "Statistical Analysis"],
+        code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing",
+        demo: "https://demo.safestreet.com",
+        img: projectImg2
     },
     {
         title: "Airbnb Pricing Tool",
@@ -35,7 +54,7 @@ const projects = [
         tech: ["Python", "Random Forest", "Feature Engineering", "Data Analysis", "Machine Learning"],
         code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
         demo: "https://demo.airbnbpricing.com",
-        img: projectImg2 // Use your actual import path
+        img: projectImg3
     }
 ];
 

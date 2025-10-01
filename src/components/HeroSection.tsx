@@ -1,5 +1,5 @@
 import { MapPin, Linkedin, Github, Mail, FileDown } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg"; // path as per your project
+import profilePhoto from "@/assets/profile-photo.jpg";
 import resumePDF from "@/assets/Yash_Bheke_Resume.pdf";
 
 const HeroSection = () => (

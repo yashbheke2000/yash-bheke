@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 const SERVICE_ID = "service_tauohhm";
-const TEMPLATE_ID = "template_1ote96s"; // Replace with EmailJS template ID
+const TEMPLATE_ID = "template_1ote96s";
 const USER_ID = "q7430s3qsE9ENPbDk";
 
 const ContactSection = () => {
