@@ -5,8 +5,47 @@ import projectImg1 from "@/assets/safestreet.jpg";
 import projectImg2 from "@/assets/mood-disorder.jpg";
 import projectImg3 from "@/assets/airbnb.jpg";
 
-// ...projects array unchanged...
-const projects = [ ];
+const projects = [
+    {
+        title: "SafeStreet",
+        period: "2024",
+        description: "A comprehensive safety platform for urban navigation and community awareness.",
+        highlights: [
+            "Real-time safety alerts and incident reporting",
+            "Community-driven safety ratings",
+            "Interactive safety heat maps"
+        ],
+        tech: ["React", "Node.js", "MongoDB", "Google Maps API"],
+        img: projectImg1,
+        code: "https://github.com/yourusername/safestreet"
+    },
+    {
+        title: "Mood Disorder Analysis",
+        period: "2024",
+        description: "Machine learning application for analyzing and tracking mood patterns.",
+        highlights: [
+            "Advanced sentiment analysis",
+            "Predictive mood tracking",
+            "Data visualization dashboard"
+        ],
+        tech: ["Python", "TensorFlow", "Flask", "React"],
+        img: projectImg2,
+        code: "https://github.com/yourusername/mood-disorder"
+    },
+    {
+        title: "Airbnb Clone",
+        period: "2023",
+        description: "Full-stack property rental platform with booking and payment integration.",
+        highlights: [
+            "User authentication and profiles",
+            "Property search and filtering",
+            "Booking management system"
+        ],
+        tech: ["React", "Express", "PostgreSQL", "Stripe"],
+        img: projectImg3,
+        code: "https://github.com/yourusername/airbnb-clone"
+    }
+];
 const ProjectsSection = () => {
     // Track carousel starting index
     const [startIdx, setStartIdx] = useState(0);
