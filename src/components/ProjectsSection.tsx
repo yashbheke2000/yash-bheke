@@ -79,7 +79,7 @@ const ProjectsSection = () => {
                     {/* Project Cards */}
                     <div className="flex gap-8 w-full justify-center">
                         {projects.slice(startIdx, startIdx + projectsToShow).map((p, i) => (
-                            <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col w-[23rem]">
+                            <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col w-[32rem]">
                                 <div className="w-full h-48 overflow-hidden">
                                     <img
                                         src={p.img}
@@ -87,7 +87,7 @@ const ProjectsSection = () => {
                                         className="object-cover w-full h-full"
                                     />
                                 </div>
-                                <div className="flex-1 flex flex-col px-8 py-7">
+                                <div className="flex-1 flex flex-col px-10 py-8">
                                     <div className="flex items-center justify-between mb-1">
                                         <span className="font-bold text-xl">{p.title}</span>
                                         <span className="flex items-center text-muted-foreground text-sm">
