@@ -25,7 +25,7 @@ const HeroSection = () => (
                 </div>
                 <p className="max-w-xl mb-10 text-white/90 text-lg">
                     Experienced Data Scientist specializing in Data Analytics, Machine Learning, and cloud automation, with a proven track record in real-time systems and scalable full-stack development.<br />
-                    Currently pursuing an MS in Information Systems at the University of Cincinnati, I build innovative, production-ready solutions leveraging technologies like Python/SQL, Cloud and ML frameworks to drive measurable business impact.
+                    Currently pursuing MS in Information Systems at the University of Cincinnati. I build innovative, production-ready solutions leveraging technologies like Python/SQL, Cloud and ML frameworks to drive measurable business impact.
                 </p>
 
                 <div className="flex space-x-5 mb-8 w-full md:w-auto justify-center md:justify-start">

@@ -9,7 +9,7 @@ const degrees = [
         period: "August 2024 - May 2026",
         location: "Cincinnati, OH",
         coursework: [
-            "Generative AI", "Statistical Computing", "Datamining for BI", "Data Analysis", "Web Development", "XML", "Database Modeling & Design"
+            "Generative AI", "Statistical Computing", "Datamining for BI", "Data Analysis", "AI ML", "Data Visualization", "Database Modeling & Design"
         ]
     },
     {
