@@ -11,11 +11,10 @@ const SKILL_CATEGORIES = [
         dot: "bg-blue-500",
         skills: [
             { name: "Python", level: 4 },
-            { name: "JavaScript", level: 4 },
-            { name: "TypeScript", level: 4 },
-            { name: "Java", level: 4 },
+            { name: "SQL", level: 5 },
             { name: "R", level: 4 },
-            { name: "C", level: 3 }
+            { name: "Bash", level: 4 },
+            { name: "C++", level: 5 }
         ]
     },
     {
@@ -59,7 +58,6 @@ const SKILL_CATEGORIES = [
             { name: "ETL Pipelines", level: 4 },
             { name: "Databricks", level: 4 },
             { name: "Snowflake", level: 4 },
-            { name: "Kafka", level: 3 },
             { name: "REST APIs", level: 4 }
         ]
     },
@@ -72,8 +70,10 @@ const SKILL_CATEGORIES = [
         dot: "bg-pink-500",
         skills: [
             { name: "Power BI", level: 4 },
-            { name: "Tableau", level: 4 },
-            { name: "Excel", level: 4 }
+            { name: "Tableau", level: 5 },
+            { name: "Excel", level: 4 },
+            { name: "Matplotlib", level: 4 },
+            { name: "Seaborn", level: 4 }
         ]
     },
     {

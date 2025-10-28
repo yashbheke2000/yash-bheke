@@ -3,20 +3,25 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const experience = {
-    title: "Software Developer (Data Analytics and Engineering)",
+    title: "Software Developer (Data Analytics & Machine Learning)",
     company: "Accelya, Mumbai",
-    period: "September 2022 - July 2024",
+    period: "September 2022 – July 2024",
     location: "Mumbai, India",
     achievements: [
-        "Reduced analytics dashboard latency by 97% (from 60+ min to <2 min) for 200+ enterprise clients",
-        "Reduced SLA lag by 27% by designing and implementing end-to-end data pipelines collaborating with 30+ business analysts across 13 teams",
-        "Led 9 A/B testing experiments resulting in 22% increase in predictive accuracy and 16% reduction in financial reporting errors",
-        "Resolved 52 production issues and drove 16 Change Requests across C-based modules, TypeScript microservices, and Python/SQL pipelines",
-        "Automated analytics/model environment setup, cutting deployment time from 1 day to 30 minutes (95% faster) and reduced infrastructure spend by 23%",
-        "Engineered ETL workflows processing 500+ GB data with 99.95% uptime over 6 months"
+        "Accelerated predictive analytics pipeline by 97% (reduced inference time from 60 min to 2 min) for real-time decision support using XGBoost and dimensionality reduction.",
+        "Built and deployed ensemble classification models (Random Forest, Gradient Boosting) to deliver 5,000+ daily flight delay predictions; informed scheduling and cut operational costs by $1.2M/year.",
+        "Led 9 A/B testing initiatives, implementing Bayesian and multi-armed bandit frameworks to identify process improvements; increased user engagement by 32% and reduced reporting errors by 16%.",
+        "Automated data-preprocessing pipelines at scale with Python/SQL, saving 600+ team hours monthly across 500+ GB production datasets.",
+        "Reduced infrastructure spend by 23% and slashed model environment deployment times from 1 day to 30 minutes (via Docker containerization and Shell/Python automation).",
+        "Resolved 52 critical production issues and changed requests across Python, SQL, C-based modules, and TypeScript microservices.",
     ],
-    tech: ["Java", "Python", "TypeScript", "SQL", "REST APIs", "ETL", "A/B Testing", "Pro*C"]
+    tech: [
+        "Python", "SQL", "XGBoost", "Random Forest", "Gradient Boosting",
+        "Docker", "Shell/Bash",
+        "REST APIs", "ETL", "A/B Testing", "Pro*C"
+    ],
 };
+
 
 const iconForAchievement = (idx) => {
     if (idx < 2) return <TrendingUp className="h-5 w-5 text-success" />;

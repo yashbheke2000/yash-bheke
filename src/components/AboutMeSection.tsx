@@ -34,13 +34,13 @@ const AboutMeSection = () => (
                 {/* Left: Text Block */}
                 <div>
                     <p className="text-lg text-professional mb-6">
-                        I'm a dedicated Software Developer with expertise in Data Analytics and Engineering, currently pursuing my Master's in Information Systems at the University of Cincinnati. My journey began with a Bachelor's in Electronics and Telecommunications, which provided a strong foundation in technical problem-solving and critical thinking.
+                        I'm a dedicated Data Scientist with expertise in Data Analytics and Machine Learning, currently pursuing my Master's in Information Systems at the University of Cincinnati. My journey began with a Bachelor's in Electronics and Telecommunications, which provided a strong foundation in technical problem-solving and critical thinking.
                     </p>
                     <p className="text-lg text-professional mb-6">
-                        At Accelya, I developed real-time analytics dashboards and engineered data pipelines that significantly improved system performance and business outcomes. I'm passionate about building scalable solutions using cutting-edge technologies like GenAI, machine learning and cloud platforms.
+                        At Accelya, I built real-time predictive models, analytics dashboards and engineered scalable data pipelines—optimizing system performance and directly driving key business outcomes for major airline clients. I'm passionate about leveraging cutting-edge technologies including Generative AI, modern ML frameworks and cloud platforms (AWS, Databricks) to deliver innovative, production-ready solutions.
                     </p>
                     <p className="text-lg text-professional mb-6">
-                        I take pride in my ability to break down complex problems and to collaborate with and lead various cross-functional teams. When I'm not coding, I enjoy exploring new technologies, learning new industry trends and sharing knowledge through technical workshops and community events.
+                        I take pride in my ability to break down complex problems, leading and collaborating with diverse cross-functional teams, and bringing rigor, curiosity and creativity to every project. Outside of coding, I love exploring new tech trends and giving back to the community through workshops and technical talks.
                     </p>
                     <div className="flex space-x-24 mt-12">
                         <div className="text-center">

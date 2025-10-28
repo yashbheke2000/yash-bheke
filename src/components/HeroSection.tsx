@@ -17,16 +17,17 @@ const HeroSection = () => (
                     Hi, I'm <span className="text-[#5C6DFF]">Yash</span>
                 </h1>
                 <div className="text-2xl md:text-3xl text-white/90 font-medium mb-5">
-                    Software Developer & Data Scientist
+                    Data Scientist and Data Analyst
                 </div>
                 <div className="flex items-center text-blue-200 mb-6">
                     <MapPin className="h-5 w-5 mr-1" />
                     <span className="font-medium">United States</span>
                 </div>
                 <p className="max-w-xl mb-10 text-white/90 text-lg">
-                    Experienced Software Developer specializing in Data Analytics and Engineering with a strong foundation in machine learning, real-time systems, and full-stack development.<br />
-                    Currently pursuing MS in Information Systems while building innovative solutions using cutting-edge technologies.
+                    Experienced Data Scientist specializing in Data Analytics, Machine Learning, and cloud automation, with a proven track record in real-time systems and scalable full-stack development.<br />
+                    Currently pursuing an MS in Information Systems at the University of Cincinnati, I build innovative, production-ready solutions leveraging technologies like Python/SQL, Cloud and ML frameworks to drive measurable business impact.
                 </p>
+
                 <div className="flex space-x-5 mb-8 w-full md:w-auto justify-center md:justify-start">
                     <a href={resumePDF} download>
                         <button className="px-6 py-2 bg-[#5C6DFF] hover:bg-[#4560e2] text-white font-semibold rounded-lg text-lg flex items-center transition">
