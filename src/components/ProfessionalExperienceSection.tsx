@@ -2,30 +2,36 @@ import { Briefcase, Calendar, TrendingUp, Zap, Star } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const experience = {
-    title: "Software Developer (Data Analytics & Machine Learning)",
-    company: "Accelya, Mumbai",
-    period: "September 2022 – July 2024",
-    location: "Mumbai, India",
-    achievements: [
-        "Accelerated predictive analytics pipeline by 97% (reduced inference time from 60 min to 2 min) for real-time decision support using XGBoost and dimensionality reduction.",
-        "Built and deployed ensemble classification models (Random Forest, Gradient Boosting) to deliver 5,000+ daily flight delay predictions; informed scheduling and cut operational costs by $1.2M/year.",
-        "Led 9 A/B testing initiatives, implementing Bayesian and multi-armed bandit frameworks to identify process improvements; increased user engagement by 32% and reduced reporting errors by 16%.",
-        "Automated data-preprocessing pipelines at scale with Python/SQL, saving 600+ team hours monthly across 500+ GB production datasets.",
-        "Reduced infrastructure spend by 23% and slashed model environment deployment times from 1 day to 30 minutes (via Docker containerization and Shell/Python automation).",
-        "Resolved 52 critical production issues and changed requests across Python, SQL, C-based modules, and TypeScript microservices.",
-    ],
-    tech: [
-        "Python", "SQL", "XGBoost", "Random Forest", "Gradient Boosting",
-        "Docker", "Shell/Bash",
-        "REST APIs", "ETL", "A/B Testing", "Pro*C"
-    ],
-};
+const experiences = [
+    {
+        title: "Graduate Assistant (IS 8034: Big Data Integration)",
+        company: "University of Cincinnati",
+        period: "Sept 2025 - Present",
+        location: "Cincinnati, Ohio",
+        achievements: [
+            "Optimized legacy data pipeline modules on Databricks using PySpark and SQL, achieving a 31% improvement in processing efficiency for large-scale research workflows across 15 complex modules.",
+            "Architected scalable data ingestion pipelines by integrating AWS (RDS, S3) with Databricks (Unity Catalog) to ensure data governance and reproducibility for collaborative ML experiments.",
+        ],
+        tech: ["Databricks", "PySpark", "SQL", "AWS RDS", "AWS S3", "Unity Catalog"],
+    },
+    {
+        title: "Software Developer (Data Analytics and Machine Learning)",
+        company: "Accelya",
+        period: "Sept 2022 - Jul 2024",
+        location: "Mumbai, India",
+        achievements: [
+            "Accelerated model inference time by 87% (15+ min to < 2 min) by enhancing the predictive analytics pipeline through PCA based dimensionality reduction and XGBoost hyperparameter tuning.",
+            "Reduced operational costs by $200K+ annually by developing ensemble classification models (Random Forest, Gradient Boosting), deployed via FastAPI; achieved 81% precision in predicting flight delays, serving 1k+ daily predictions for 12 global airlines.",
+            "Improved user engagement by 18% and reduced reporting errors by 16% by designing an A/B testing framework combining Bayesian inference, Multi-armed Bandit algorithm and hypothesis testing.",
+            "Eliminated 60+ hours of monthly manual work for the analytics team by automating data pre-processing workflows which streamlined cleaning, validation and EDA for 500+ GB datasets.",
+        ],
+        tech: ["Python", "SQL", "XGBoost", "Random Forest", "Gradient Boosting", "FastAPI", "PCA", "A/B Testing"],
+    },
+];
 
-
-const iconForAchievement = (idx) => {
-    if (idx < 2) return <TrendingUp className="h-5 w-5 text-success" />;
-    if (idx < 4) return <Zap className="h-5 w-5 text-primary" />;
+const iconForAchievement = (idx: number) => {
+    if (idx < 1) return <TrendingUp className="h-5 w-5 text-success" />;
+    if (idx < 3) return <Zap className="h-5 w-5 text-primary" />;
     return <Star className="h-5 w-5 text-accent" />;
 };
 
@@ -39,47 +45,49 @@ const ProfessionalExperienceSection = () => (
                     2+ years of experience in data engineering, analytics, and software development
                 </p>
             </div>
-            <div className="max-w-4xl mx-auto">
-                <Card className="shadow-card border-0 overflow-hidden">
-                    <CardHeader className="bg-gradient-primary text-white">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <CardTitle className="text-2xl flex items-center">
-                                    <Briefcase className="mr-3 h-6 w-6" />
-                                    {experience.title}
-                                </CardTitle>
-                                <p className="text-white/90 text-lg">{experience.company}</p>
-                                <p className="text-white/70 text-base">{experience.location}</p>
-                            </div>
-                            <Badge className="bg-white/20 text-white border-white/30">
-                                <Calendar className="mr-2 h-4 w-4" />
-                                {experience.period}
-                            </Badge>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="p-8">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {experience.achievements.map((achievement, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex items-start space-x-3 p-4 rounded-lg bg-gradient-subtle hover:shadow-md transition-all"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        {iconForAchievement(idx)}
-                                    </div>
-                                    <p className="text-sm leading-relaxed text-professional/80">{achievement}</p>
+            <div className="max-w-4xl mx-auto space-y-8">
+                {experiences.map((experience, expIdx) => (
+                    <Card key={expIdx} className="shadow-card border-0 overflow-hidden">
+                        <CardHeader className="bg-gradient-primary text-white">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                                <div>
+                                    <CardTitle className="text-xl md:text-2xl flex items-center">
+                                        <Briefcase className="mr-3 h-6 w-6" />
+                                        {experience.title}
+                                    </CardTitle>
+                                    <p className="text-white/90 text-lg">{experience.company}</p>
+                                    <p className="text-white/70 text-base">{experience.location}</p>
                                 </div>
-                            ))}
-                        </div>
-                        <div className="flex flex-wrap gap-2 mt-8">
-                            {experience.tech.map((tech) => (
-                                <Badge key={tech} variant="secondary" className="text-xs">
-                                    {tech}
+                                <Badge className="bg-white/20 text-white border-white/30 self-start md:self-center">
+                                    <Calendar className="mr-2 h-4 w-4" />
+                                    {experience.period}
                                 </Badge>
-                            ))}
-                        </div>
-                    </CardContent>
-                </Card>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="p-8">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                {experience.achievements.map((achievement, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="flex items-start space-x-3 p-4 rounded-lg bg-gradient-subtle hover:shadow-md transition-all"
+                                    >
+                                        <div className="flex-shrink-0 mt-1">
+                                            {iconForAchievement(idx)}
+                                        </div>
+                                        <p className="text-sm leading-relaxed text-professional/80">{achievement}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-wrap gap-2 mt-8">
+                                {experience.tech.map((tech) => (
+                                    <Badge key={tech} variant="secondary" className="text-xs">
+                                        {tech}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
             </div>
         </div>
     </section>
