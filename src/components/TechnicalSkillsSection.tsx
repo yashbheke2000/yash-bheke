@@ -1,164 +1,148 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Code, BarChart, Database, Server, Cpu, Cloud } from "lucide-react";
 
 const SKILL_CATEGORIES = [
-    {
-        key: "programming",
-        label: "Programming Languages",
-        icon: <Code className="h-5 w-5 mr-2" />,
-        color: "text-blue-700",
-        bgPanel: "bg-blue-50",
-        dot: "bg-blue-500",
-        skills: [
-            { name: "Python", level: 4 },
-            { name: "SQL", level: 5 },
-            { name: "R", level: 4 },
-            { name: "Bash", level: 4 },
-            { name: "C++", level: 5 }
-        ]
-    },
-    {
-        key: "ml",
-        label: "Data Science & ML",
-        icon: <BarChart className="h-5 w-5 mr-2" />,
-        color: "text-purple-700",
-        bgPanel: "bg-purple-50",
-        dot: "bg-purple-500",
-        skills: [
-            { name: "GenAI", level: 4 },
-            { name: "NLP", level: 4 },
-            { name: "LLMs", level: 4 },
-            { name: "PyTorch", level: 4 },
-            { name: "TensorFlow", level: 4 }
-        ]
-    },
-    {
-        key: "db",
-        label: "Databases & Big Data",
-        icon: <Database className="h-5 w-5 mr-2" />,
-        color: "text-green-700",
-        bgPanel: "bg-green-50",
-        dot: "bg-green-500",
-        skills: [
-            { name: "Oracle", level: 4 },
-            { name: "BigQuery", level: 3 },
-            { name: "MySQL", level: 5 },
-            { name: "PostgreSQL", level: 5 },
-            { name: "MongoDB", level: 4 }
-        ]
-    },
-    {
-        key: "eng",
-        label: "Data Engineering",
-        icon: <Server className="h-5 w-5 mr-2" />,
-        color: "text-orange-700",
-        bgPanel: "bg-orange-50",
-        dot: "bg-orange-500",
-        skills: [
-            { name: "ETL Pipelines", level: 4 },
-            { name: "Databricks", level: 4 },
-            { name: "Snowflake", level: 4 },
-            { name: "REST APIs", level: 4 }
-        ]
-    },
-    {
-        key: "viz",
-        label: "Visualization & Analysis",
-        icon: <Cpu className="h-5 w-5 mr-2" />,
-        color: "text-pink-700",
-        bgPanel: "bg-pink-50",
-        dot: "bg-pink-500",
-        skills: [
-            { name: "Power BI", level: 4 },
-            { name: "Tableau", level: 5 },
-            { name: "Excel", level: 4 },
-            { name: "Matplotlib", level: 4 },
-            { name: "Seaborn", level: 4 }
-        ]
-    },
-    {
-        key: "devops",
-        label: "DevOps & Infrastructure",
-        icon: <Cloud className="h-5 w-5 mr-2" />,
-        color: "text-indigo-700",
-        bgPanel: "bg-indigo-50",
-        dot: "bg-indigo-500",
-        skills: [
-            { name: "Docker", level: 4 },
-            { name: "Linux", level: 5 },
-            { name: "Git", level: 5 },
-            { name: "Azure", level: 3 },
-            { name: "AWS", level: 4 }
-        ]
-    }
+  {
+    key: "programming",
+    label: "Programming",
+    icon: Code,
+    color: "from-blue-500 to-cyan-500",
+    skills: ["Python", "SQL", "R", "Bash", "C++"],
+  },
+  {
+    key: "ml",
+    label: "Data Science & ML",
+    icon: BarChart,
+    color: "from-purple-500 to-pink-500",
+    skills: ["GenAI", "NLP", "LLMs", "PyTorch", "TensorFlow"],
+  },
+  {
+    key: "db",
+    label: "Databases",
+    icon: Database,
+    color: "from-green-500 to-emerald-500",
+    skills: ["Oracle", "BigQuery", "MySQL", "PostgreSQL", "MongoDB"],
+  },
+  {
+    key: "eng",
+    label: "Data Engineering",
+    icon: Server,
+    color: "from-orange-500 to-amber-500",
+    skills: ["ETL Pipelines", "Databricks", "Snowflake", "REST APIs"],
+  },
+  {
+    key: "viz",
+    label: "Visualization",
+    icon: Cpu,
+    color: "from-pink-500 to-rose-500",
+    skills: ["Power BI", "Tableau", "Excel", "Matplotlib", "Seaborn"],
+  },
+  {
+    key: "devops",
+    label: "DevOps",
+    icon: Cloud,
+    color: "from-indigo-500 to-violet-500",
+    skills: ["Docker", "Linux", "Git", "Azure", "AWS"],
+  },
 ];
 
 const TechnicalSkillsSection = () => {
-    const [active, setActive] = useState(1);
-    const activeCat = SKILL_CATEGORIES[active];
+  const [active, setActive] = useState(0);
+  const activeCat = SKILL_CATEGORIES[active];
 
-    return (
-        <section id="skills" className="py-20 bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-5xl font-bold text-center mb-2">Technical Skills</h2>
-                <p className="text-lg text-center text-muted-foreground mb-10">
-                    Comprehensive expertise across the full technology stack
-                </p>
-                {/* Tab bar */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
-                    {SKILL_CATEGORIES.map((cat, idx) => (
-                        <button
-                            key={cat.key}
-                            className={`
-                flex flex-col items-center justify-center px-7 py-3 rounded-xl border
-                min-w-[160px] transition-all
-                ${active === idx
-                                    ? "border-blue-500 shadow bg-white"
-                                    : "border-gray-200 bg-gray-50 hover:bg-gray-100"
-                                }
-              `}
-                            style={{
-                                borderColor: active === idx ? "#5C6DFF" : undefined
-                            }}
-                            onClick={() => setActive(idx)}
-                        >
-                            <span className={`mb-1 ${cat.color}`}>{cat.icon}</span>
-                            <span className="font-medium text-[15px]">{cat.label}</span>
-                        </button>
-                    ))}
-                </div>
-                {/* Category Panel */}
+  return (
+    <section id="skills" className="py-32 bg-card relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[150px]" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section header */}
+        <motion.div
+          className="mb-20 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">
+            Skills
+          </p>
+          <h2 className="editorial-heading text-5xl lg:text-6xl text-foreground">
+            Technical Expertise
+          </h2>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto">
+          {/* Category tabs */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {SKILL_CATEGORIES.map((cat, idx) => (
+              <motion.button
+                key={cat.key}
+                onClick={() => setActive(idx)}
+                className={`flex items-center gap-2 px-5 py-3 rounded-full border transition-all duration-300 ${
+                  active === idx
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <cat.icon className="w-4 h-4" />
+                <span className="font-medium text-sm">{cat.label}</span>
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Skills panel */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCat.key}
+              className="relative p-8 lg:p-12 rounded-3xl bg-background border border-border overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Gradient accent */}
+              <div
+                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${activeCat.color}`}
+              />
+
+              <div className="flex items-center gap-4 mb-8">
                 <div
-                    className={`rounded-2xl ${activeCat.bgPanel} p-8 max-w-3xl mx-auto shadow-md`}
+                  className={`p-3 rounded-xl bg-gradient-to-br ${activeCat.color} text-white`}
                 >
-                    <div className="flex items-center mb-6">
-                        <span className={`${activeCat.color} mr-2`}>{activeCat.icon}</span>
-                        <span className="font-bold text-xl">{activeCat.label}</span>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        {activeCat.skills.map(({ name, level }) => (
-                            <div
-                                key={name}
-                                className="flex items-center justify-between px-6 py-3 rounded-lg bg-white shadow-sm"
-                            >
-                                <span className="text-professional font-semibold bg-gray-50 px-3 py-1 rounded">{name}</span>
-                                <span className="flex items-center space-x-1">
-                                    {[0, 1, 2, 3, 4].map((dot, dIdx) => (
-                                        <span
-                                            key={dIdx}
-                                            className={`inline-block h-2.5 w-2.5 rounded-full 
-                        ${dIdx < level ? activeCat.dot : "bg-gray-300"}
-                      `}
-                                        />
-                                    ))}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                  <activeCat.icon className="w-6 h-6" />
                 </div>
-            </div>
-        </section>
-    );
+                <h3 className="text-2xl font-bold text-foreground">{activeCat.label}</h3>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {activeCat.skills.map((skill, idx) => (
+                  <motion.div
+                    key={skill}
+                    className="p-4 rounded-xl bg-secondary/50 border border-border hover:border-primary/30 text-center transition-all duration-300 hover-lift"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.05 }}
+                  >
+                    <span className="font-semibold text-foreground">{skill}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default TechnicalSkillsSection;
