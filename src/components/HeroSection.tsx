@@ -1,88 +1,189 @@
-import { MapPin, Linkedin, Github, Mail, FileDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, ArrowDown, FileDown } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 import resumePDF from "@/assets/Yash_Bheke_Resume.pdf";
 
-const HeroSection = () => (
-    <section
-        className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-[#152045] to-[#2545B0] px-4"
-        style={{
-            overflow: "hidden"
-        }}
-    >
-        {/* Content Grid */}
-        <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10 items-center z-10">
-            {/* Left Column: Text Content */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h1 className="text-5xl sm:text-6xl font-bold text-white mb-3">
-                    Hi, I'm <span className="text-[#5C6DFF]">Yash</span>
-                </h1>
-                <div className="text-2xl md:text-3xl text-white/90 font-medium mb-5">
-                    Data Scientist and Data Analyst
-                </div>
-                <div className="flex items-center text-blue-200 mb-6">
-                    <MapPin className="h-5 w-5 mr-1" />
-                    <span className="font-medium">United States</span>
-                </div>
-                <p className="max-w-xl mb-10 text-white/90 text-lg">
-                    Experienced Data Scientist specializing in Data Analytics, Machine Learning, and cloud automation, with a proven track record in real-time systems and scalable full-stack development.<br />
-                    Currently pursuing MS in Information Systems at the University of Cincinnati. I build innovative, production-ready solutions leveraging technologies like Python/SQL, Cloud and ML frameworks to drive measurable business impact.
-                </p>
+const HeroSection = () => {
+  const scrollToWork = () => {
+    const el = document.getElementById("experience");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
-                <div className="flex space-x-5 mb-8 w-full md:w-auto justify-center md:justify-start">
-                    <a href={resumePDF} download>
-                        <button className="px-6 py-2 bg-[#5C6DFF] hover:bg-[#4560e2] text-white font-semibold rounded-lg text-lg flex items-center transition">
-                            <FileDown className="mr-2 h-5 w-5" /> Download Resume
-                        </button>
-                    </a>
-                    <button
-                        className="px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-[#152045] font-semibold rounded-lg text-lg flex items-center transition"
-                        onClick={() => {
-                            const el = document.getElementById('experience');
-                            if (el) {
-                                el.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
-                    >
-                        View My Work
-                    </button>
+  return (
+    <section className="min-h-screen relative flex items-center justify-center overflow-hidden bg-background">
+      {/* Animated background glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-[120px]"
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-accent/15 blur-[100px]"
+          animate={{ x: [0, -40, 0], y: [0, -20, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
-                </div>
-                <div className="flex space-x-7 justify-center md:justify-start mt-2 pt-3 text-white text-2xl">
-                    <a href="https://github.com/yashbheke2000" target="_blank" rel="noopener noreferrer">
-                        <Github className="hover:text-[#5C6DFF] transition" />
-                    </a>
-                    <a href="https://linkedin.com/in/yash-bheke" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="hover:text-[#5C6DFF] transition" />
-                    </a>
-                    <button
-                        onClick={() => {
-                            const el = document.getElementById('contact');
-                            if (el) {
-                                el.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }}
-                        className="bg-transparent border-0 p-0 m-0"
-                        aria-label="Scroll to Contact Section"
-                    >
-                        <Mail className="hover:text-[#5C6DFF] transition" />
-                    </button>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px),
+                          linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
+        backgroundSize: '60px 60px'
+      }} />
 
-                </div>
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 items-center min-h-[70vh]">
+          {/* Left content - takes 7 cols */}
+          <motion.div
+            className="lg:col-span-7 space-y-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="space-y-2">
+              <motion.p
+                className="text-primary font-medium tracking-wide uppercase text-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                Data Scientist & Data Analyst
+              </motion.p>
+              <h1 className="editorial-heading text-6xl sm:text-7xl lg:text-8xl text-foreground">
+                <span className="block">Yash</span>
+                <span className="block text-gradient">Krishna</span>
+                <span className="block">Bheke</span>
+              </h1>
             </div>
-            {/* Right Column: Profile Photo */}
-            <div className="flex justify-center md:justify-end w-full">
-                <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#5c6dff66] to-[#2545B07e] rounded-full blur-2xl opacity-80 scale-110" />
-                    <img
-                        src={profilePhoto}
-                        alt="Yash Krishna Bheke"
-                        className="relative z-10 w-80 h-80 rounded-full object-cover border-4 border-white/20 shadow-2xl"
-                    />
-                </div>
+
+            <motion.p
+              className="text-lg text-muted-foreground max-w-xl leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              Specializing in{" "}
+              <span className="text-foreground font-medium">machine learning</span>,{" "}
+              <span className="text-foreground font-medium">data analytics</span>, and{" "}
+              <span className="text-foreground font-medium">cloud automation</span>.
+              Building production-ready solutions that drive measurable business impact.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-4 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              <a href={resumePDF} download>
+                <motion.button
+                  className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full flex items-center gap-3 hover:bg-primary/90 transition-all glow"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FileDown className="w-5 h-5" />
+                  Download Resume
+                </motion.button>
+              </a>
+              <motion.button
+                onClick={scrollToWork}
+                className="px-8 py-4 border border-border text-foreground font-medium rounded-full flex items-center gap-3 hover:bg-secondary transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                View My Work
+                <ArrowDown className="w-4 h-4" />
+              </motion.button>
+            </motion.div>
+
+            {/* Social links */}
+            <motion.div
+              className="flex items-center gap-6 pt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              <span className="text-sm text-muted-foreground">Follow</span>
+              <div className="h-px w-12 bg-border" />
+              <div className="flex gap-4">
+                {[
+                  { icon: Github, href: "https://github.com/yashbheke2000" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/yash-bheke" },
+                  { icon: Mail, href: "#contact" },
+                ].map((social, i) => (
+                  <motion.a
+                    key={i}
+                    href={social.href}
+                    target={social.href.startsWith("http") ? "_blank" : undefined}
+                    rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right - Profile image */}
+          <motion.div
+            className="lg:col-span-5 flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="relative">
+              {/* Glow behind image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-3xl scale-110" />
+              
+              {/* Image container */}
+              <motion.div
+                className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border border-border/50"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
+                <img
+                  src={profilePhoto}
+                  alt="Yash Krishna Bheke"
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              </motion.div>
+
+              {/* Floating badge */}
+              <motion.div
+                className="absolute -bottom-4 -left-4 bg-card border border-border rounded-2xl px-5 py-3 shadow-card"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <p className="text-xs text-muted-foreground">Currently pursuing</p>
+                <p className="text-sm font-semibold text-foreground">MS in Information Systems</p>
+              </motion.div>
             </div>
+          </motion.div>
         </div>
-        {/* You can add a future canvas or animated SVG background here */}
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="w-6 h-10 rounded-full border-2 border-border flex justify-center pt-2">
+          <motion.div
+            className="w-1.5 h-1.5 rounded-full bg-primary"
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </div>
+      </motion.div>
     </section>
-);
+  );
+};
 
 export default HeroSection;
