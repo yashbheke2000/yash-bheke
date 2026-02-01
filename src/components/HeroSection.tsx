@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowDown, FileDown } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profile-photo.png";
 import resumePDF from "@/assets/Yash_Bheke_Resume.pdf";
 
 const HeroSection = () => {
