@@ -32,7 +32,7 @@ const leadership = [
   {
     title: "Student Ambassador",
     org: "MSIS, University of Cincinnati",
-    period: "Sept 2025 - Dec 2025",
+    period: "Sept 2024 - Aug 2025",
     desc: "Representing the MSIS program and guiding prospective students",
   },
   {
@@ -146,28 +146,6 @@ const EducationLeadershipSection = () => (
             </motion.div>
           ))}
 
-          {/* Highlights card */}
-          <motion.div
-            className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="font-bold text-foreground mb-4">Highlights</h4>
-            <ul className="space-y-3">
-              {[
-                "Organized flagship events: ByteCamp, Hackathons, Dev Summit, TEDxSIESGST",
-                "Student Ambassador guiding prospective MSIS students",
-                "Pro-bono consulting leadership with Neo Initiative",
-              ].map((h, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground text-sm">{h}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
         </div>
       </div>
     </div>
