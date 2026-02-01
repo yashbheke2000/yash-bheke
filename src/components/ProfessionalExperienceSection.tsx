@@ -1,88 +1,135 @@
-import { Briefcase, Calendar, TrendingUp, Zap, Star } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin, ArrowUpRight } from "lucide-react";
 
-const experience = {
-    title: "Software Developer (Data Analytics & Machine Learning)",
-    company: "Accelya, Mumbai",
-    period: "September 2022 – July 2024",
+const experiences = [
+  {
+    title: "Graduate Assistant",
+    subtitle: "IS 8034: Big Data Integration",
+    company: "University of Cincinnati",
+    period: "Sept 2025 - Present",
+    location: "Cincinnati, Ohio",
+    achievements: [
+      "Optimized legacy data pipeline modules on Databricks using PySpark and SQL, achieving a 31% improvement in processing efficiency",
+      "Architected scalable data ingestion pipelines by integrating AWS (RDS, S3) with Databricks Unity Catalog",
+    ],
+    tech: ["Databricks", "PySpark", "SQL", "AWS RDS", "AWS S3", "Unity Catalog"],
+  },
+  {
+    title: "Software Developer",
+    subtitle: "Data Analytics & Machine Learning",
+    company: "Accelya",
+    period: "Sept 2022 - Jul 2024",
     location: "Mumbai, India",
     achievements: [
-        "Accelerated predictive analytics pipeline by 97% (reduced inference time from 60 min to 2 min) for real-time decision support using XGBoost and dimensionality reduction.",
-        "Built and deployed ensemble classification models (Random Forest, Gradient Boosting) to deliver 5,000+ daily flight delay predictions; informed scheduling and cut operational costs by $1.2M/year.",
-        "Led 9 A/B testing initiatives, implementing Bayesian and multi-armed bandit frameworks to identify process improvements; increased user engagement by 32% and reduced reporting errors by 16%.",
-        "Automated data-preprocessing pipelines at scale with Python/SQL, saving 600+ team hours monthly across 500+ GB production datasets.",
-        "Reduced infrastructure spend by 23% and slashed model environment deployment times from 1 day to 30 minutes (via Docker containerization and Shell/Python automation).",
-        "Resolved 52 critical production issues and changed requests across Python, SQL, C-based modules, and TypeScript microservices.",
+      "Accelerated model inference time by 87% through PCA-based dimensionality reduction and XGBoost hyperparameter tuning",
+      "Reduced operational costs by $200K+ annually with ensemble classification models deployed via FastAPI",
+      "Improved user engagement by 18% by designing an A/B testing framework with Bayesian inference",
+      "Eliminated 60+ hours of monthly manual work by automating data pre-processing workflows",
     ],
-    tech: [
-        "Python", "SQL", "XGBoost", "Random Forest", "Gradient Boosting",
-        "Docker", "Shell/Bash",
-        "REST APIs", "ETL", "A/B Testing", "Pro*C"
-    ],
-};
-
-
-const iconForAchievement = (idx) => {
-    if (idx < 2) return <TrendingUp className="h-5 w-5 text-success" />;
-    if (idx < 4) return <Zap className="h-5 w-5 text-primary" />;
-    return <Star className="h-5 w-5 text-accent" />;
-};
+    tech: ["Python", "SQL", "XGBoost", "Random Forest", "FastAPI", "A/B Testing"],
+  },
+];
 
 const ProfessionalExperienceSection = () => (
-    <section id="experience" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-            <div className="text-center space-y-4 mb-14">
-                <Badge className="bg-primary/10 text-primary border-primary/20">Professional Experience</Badge>
-                <h2 className="text-4xl font-bold text-professional">Building Scalable Solutions</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                    2+ years of experience in data engineering, analytics, and software development
-                </p>
+  <section id="experience" className="py-32 bg-card relative overflow-hidden">
+    {/* Background decoration */}
+    <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+
+    <div className="container mx-auto px-6 relative z-10">
+      {/* Section header */}
+      <motion.div
+        className="mb-20 max-w-3xl"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">
+          Experience
+        </p>
+        <h2 className="editorial-heading text-5xl lg:text-6xl text-foreground">
+          Building Scalable Solutions
+        </h2>
+        <p className="text-muted-foreground text-lg mt-6">
+          2+ years of experience in data engineering, analytics, and software development
+        </p>
+      </motion.div>
+
+      {/* Timeline */}
+      <div className="space-y-8">
+        {experiences.map((exp, i) => (
+          <motion.div
+            key={i}
+            className="group relative"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+          >
+            <div className="p-8 lg:p-10 rounded-3xl bg-background border border-border hover:border-primary/30 transition-all duration-500">
+              {/* Header */}
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-8">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                      <Briefcase className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl lg:text-2xl font-bold text-foreground">
+                        {exp.title}
+                      </h3>
+                      <p className="text-primary font-medium">{exp.subtitle}</p>
+                    </div>
+                  </div>
+                  <p className="text-lg text-foreground font-medium">{exp.company}</p>
+                </div>
+
+                <div className="flex flex-col lg:items-end gap-2 text-muted-foreground">
+                  <span className="flex items-center gap-2 text-sm">
+                    <Calendar className="w-4 h-4" />
+                    {exp.period}
+                  </span>
+                  <span className="flex items-center gap-2 text-sm">
+                    <MapPin className="w-4 h-4" />
+                    {exp.location}
+                  </span>
+                </div>
+              </div>
+
+              {/* Achievements */}
+              <div className="grid lg:grid-cols-2 gap-4 mb-8">
+                {exp.achievements.map((achievement, j) => (
+                  <motion.div
+                    key={j}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 group-hover:bg-secondary transition-colors"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + j * 0.1 }}
+                  >
+                    <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-muted-foreground leading-relaxed">{achievement}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-2">
+                {exp.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="max-w-4xl mx-auto">
-                <Card className="shadow-card border-0 overflow-hidden">
-                    <CardHeader className="bg-gradient-primary text-white">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <CardTitle className="text-2xl flex items-center">
-                                    <Briefcase className="mr-3 h-6 w-6" />
-                                    {experience.title}
-                                </CardTitle>
-                                <p className="text-white/90 text-lg">{experience.company}</p>
-                                <p className="text-white/70 text-base">{experience.location}</p>
-                            </div>
-                            <Badge className="bg-white/20 text-white border-white/30">
-                                <Calendar className="mr-2 h-4 w-4" />
-                                {experience.period}
-                            </Badge>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="p-8">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {experience.achievements.map((achievement, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex items-start space-x-3 p-4 rounded-lg bg-gradient-subtle hover:shadow-md transition-all"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        {iconForAchievement(idx)}
-                                    </div>
-                                    <p className="text-sm leading-relaxed text-professional/80">{achievement}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="flex flex-wrap gap-2 mt-8">
-                            {experience.tech.map((tech) => (
-                                <Badge key={tech} variant="secondary" className="text-xs">
-                                    {tech}
-                                </Badge>
-                            ))}
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
-        </div>
-    </section>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
 );
 
 export default ProfessionalExperienceSection;

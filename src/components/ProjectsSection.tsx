@@ -1,145 +1,183 @@
-import React, { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Calendar } from "lucide-react";
 import projectImg1 from "@/assets/safestreet.jpg";
 import projectImg2 from "@/assets/mood-disorder.jpg";
 import projectImg3 from "@/assets/airbnb.jpg";
 
 const projects = [
-    {
-        title: "SafeStreet",
-        period: "2025",
-        description: "Architected a multimodal, real-time safety chatbot for homebuyers and urban commuters, combining LLMs, live search APIs, and image analysis for proactive risk guidance.",
-        highlights: [
-            "Enabled live crime stats, risk indices, and safest housing recommendations",
-            "Integrated Vision-LLM pipelines to parse crime-scene images and provide actionable mitigation steps",
-            "Expanded support to 20+ languages, scaling safety resources for diverse communities",
-            "Achieved <2 seconds response time on typical 500-token queries)"
-        ],
-        tech: ["Gemini-1.5 Pro", "YOLOv8", "NLU", "Vision-LLM", "RAG", "Dify", "Google News API", "Dify", "Python"],
-        img: projectImg1,
-        code: "https://github.com/harshitaaa006/GenAIProject"
-    },
-    {
-        title: "Mood Disorder Analysis",
-        period: "2024",
-        description: "Developed a predictive analytics pipeline for mood disorders, leveraging clinical and behavioral data to support early, targeted intervention.",
-        highlights: [
-            "Processed 40,000+ patient records for comprehensive psychosocial modeling",
-            "Benchmarked various models with nested cross-validation, achieving ROC-AUC 1.00 and perfect recall on minority class",
-            "Applied SHAP and permutation importance to pinpoint top predictive biomarkers",
-            "Visualized key risk indicators, empowering personalized diagnosis and follow-up strategies"
-        ],
-        tech: ["Python", "Pandas", "Scikit-learn", "Random Forest", "Extra Trees", "SHAP", "ETL", "Data Visualization"],
-        img: projectImg2,
-        code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing"
-    },
-    {
-        title: "Airbnb Pricing Tool",
-        period: "2024",
-        description: "Developed a robust pricing optimization application for short-term rental hosts",
-        highlights: [
-            "Automated cleaning/feature engineering for property, guest ratio and dynamic stay attributes",
-            "Optimized a 600-tree Random Forest (R²=0.83, MAE $23.9), reducing errors by 40% over linear models",
-            "Identified top 5 price-driving features using SHAP and permutation importance",
-            "Delivered a pricing tool for hosts to tweak listing details and get instant, model-backed pricing (93% band coverage)"
-        ],
-        tech: ["Python", "Random Forest", "sklearn", "Pandas", "SHAP", "Google Colab"],
-        img: projectImg3,
-        code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing"
-    }
+  {
+    title: "SafeStreet",
+    period: "2025",
+    description:
+      "Architected a multimodal, real-time safety chatbot for homebuyers and urban commuters, combining LLMs, live search APIs, and image analysis.",
+    highlights: [
+      "Live crime stats and safest housing recommendations",
+      "Vision-LLM pipelines for crime-scene image analysis",
+      "20+ language support for diverse communities",
+      "<2 seconds response time on typical queries",
+    ],
+    tech: ["Gemini-1.5 Pro", "YOLOv8", "RAG", "Vision-LLM", "Python"],
+    img: projectImg1,
+    code: "https://github.com/harshitaaa006/GenAIProject",
+    featured: true,
+  },
+  {
+    title: "Mood Disorder Analysis",
+    period: "2024",
+    description:
+      "Predictive analytics pipeline for mood disorders, leveraging clinical and behavioral data for early intervention.",
+    highlights: [
+      "40,000+ patient records processed",
+      "ROC-AUC 1.00 with perfect recall",
+      "SHAP analysis for biomarker identification",
+    ],
+    tech: ["Python", "Scikit-learn", "Random Forest", "SHAP"],
+    img: projectImg2,
+    code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing",
+  },
+  {
+    title: "Airbnb Pricing Tool",
+    period: "2024",
+    description:
+      "Robust pricing optimization application for short-term rental hosts with ML-backed recommendations.",
+    highlights: [
+      "R²=0.83 with 600-tree Random Forest",
+      "40% error reduction over linear models",
+      "93% pricing band coverage",
+    ],
+    tech: ["Python", "Random Forest", "SHAP", "Pandas"],
+    img: projectImg3,
+    code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
+  },
 ];
-const ProjectsSection = () => {
-    // Track carousel starting index
-    const [startIdx, setStartIdx] = useState(0);
-    const projectsToShow = 2;
-    const maxIdx = projects.length - projectsToShow;
 
-    const handlePrev = () => setStartIdx((prev) => Math.max(prev - 1, 0));
-    const handleNext = () => setStartIdx((prev) => Math.min(prev + 1, maxIdx));
+const ProjectsSection = () => (
+  <section id="projects" className="py-32 bg-background relative overflow-hidden">
+    {/* Glow effect */}
+    <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]" />
 
-    return (
-        <section id="projects" className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <div className="text-center space-y-4 mb-12">
-                    <h2 className="text-5xl font-bold">Featured Projects</h2>
-                    <p className="text-lg text-muted-foreground">
-                        Innovative solutions built with cutting-edge technologies
-                    </p>
+    <div className="container mx-auto px-6 relative z-10">
+      {/* Section header */}
+      <motion.div
+        className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div>
+          <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">
+            Projects
+          </p>
+          <h2 className="editorial-heading text-5xl lg:text-6xl text-foreground">
+            Featured Work
+          </h2>
+        </div>
+        <p className="text-muted-foreground text-lg max-w-md">
+          Innovative solutions built with cutting-edge technologies
+        </p>
+      </motion.div>
+
+      {/* Projects grid */}
+      <div className="space-y-8">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            className="group"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+          >
+            <div
+              className={`grid ${
+                project.featured ? "lg:grid-cols-2" : "lg:grid-cols-5"
+              } gap-8 p-6 lg:p-8 rounded-3xl bg-card border border-border hover:border-primary/30 transition-all duration-500`}
+            >
+              {/* Image */}
+              <div
+                className={`${
+                  project.featured ? "lg:col-span-1" : "lg:col-span-2"
+                } relative overflow-hidden rounded-2xl`}
+              >
+                <motion.div
+                  className="aspect-video lg:aspect-square overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                </motion.div>
+              </div>
+
+              {/* Content */}
+              <div
+                className={`${
+                  project.featured ? "lg:col-span-1" : "lg:col-span-3"
+                } flex flex-col justify-center space-y-6`}
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4" />
+                    {project.period}
+                  </span>
                 </div>
-                <div className="relative flex items-center w-full mx-auto">
-                    {/* Left Arrow */}
-                    <button
-                        className={`absolute left-0 z-20 bg-white rounded-full shadow-lg p-3 hover:bg-blue-50 transition ${startIdx === 0 ? "opacity-40 cursor-not-allowed" : ""}`}
-                        onClick={handlePrev}
-                        disabled={startIdx === 0}
+
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Highlights */}
+                <ul className="space-y-2">
+                  {project.highlights.map((h, j) => (
+                    <li key={j} className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
                     >
-                        <ChevronLeft className="h-7 w-7 text-blue-600" />
-                    </button>
-                    {/* Project Cards */}
-                    <div className="flex gap-8 w-full justify-center">
-                        {projects.slice(startIdx, startIdx + projectsToShow).map((p, i) => (
-                            <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col w-[40rem]">
-                                <div className="w-full h-48 overflow-hidden">
-                                    <img
-                                        src={p.img}
-                                        alt={`${p.title} cover`}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div className="flex-1 flex flex-col px-10 py-8">
-                                    <div className="flex items-center justify-between mb-1">
-                                        <span className="font-bold text-xl">{p.title}</span>
-                                        <span className="flex items-center text-muted-foreground text-sm">
-                                            <Calendar className="mr-1 h-4 w-4" />
-                                            {p.period}
-                                        </span>
-                                    </div>
-                                    <p className="mb-4 text-professional/90">{p.description}</p>
-                                    <div className="mb-4">
-                                        <div className="font-semibold mb-2">Key Features:</div>
-                                        <ul className="space-y-2 text-base">
-                                            {p.highlights.map((h, idx) => (
-                                                <li key={idx} className="flex items-center text-muted-foreground/90">
-                                                    <span className="mr-2 text-blue-500 font-bold">&rarr;</span>
-                                                    <span>{h}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="mb-5">
-                                        <div className="font-semibold mb-1 mt-2">Technologies:</div>
-                                        <div className="flex flex-wrap gap-2">
-                                            {p.tech.map((t, idx) => (
-                                                <Badge key={idx} variant="outline" className="text-xs py-1 px-3">
-                                                    {t}
-                                                </Badge>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="mt-auto pt-2">
-                                        <a href={p.code} target="_blank" rel="noopener noreferrer" className="block">
-                                            <button className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition">
-                                                <span className="mr-2">🡥</span> View Code
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    {/* Right Arrow */}
-                    <button
-                        className={`absolute right-0 z-20 bg-white rounded-full shadow-lg p-3 hover:bg-blue-50 transition ${startIdx === maxIdx ? "opacity-40 cursor-not-allowed" : ""}`}
-                        onClick={handleNext}
-                        disabled={startIdx === maxIdx}
-                    >
-                        <ChevronRight className="h-7 w-7 text-blue-600" />
-                    </button>
+                      {t}
+                    </span>
+                  ))}
                 </div>
+
+                {/* Actions */}
+                <div className="flex gap-4 pt-2">
+                  <motion.a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Github className="w-4 h-4" />
+                    View Code
+                    <ExternalLink className="w-4 h-4" />
+                  </motion.a>
+                </div>
+              </div>
             </div>
-        </section>
-    );
-};
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default ProjectsSection;
