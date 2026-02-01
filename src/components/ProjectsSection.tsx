@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Calendar } from "lucide-react";
 import projectImg1 from "@/assets/safestreet.jpg";
-import projectImg2 from "@/assets/mood-disorder.jpg";
-import projectImg3 from "@/assets/airbnb.jpg";
+import projectImg2 from "@/assets/bearcatbot-workflow.png";
+import projectImg3 from "@/assets/mood-disorder.jpg";
+import projectImg4 from "@/assets/airbnb.jpg";
 
 const projects = [
   {
@@ -22,6 +23,22 @@ const projects = [
     featured: true,
   },
   {
+    title: "Bearcats Bot",
+    period: "2025",
+    description:
+      "AI-powered MSIS Admissions Chatbot providing 24/7 instant, multilingual support for prospective students using dual-approach architecture.",
+    highlights: [
+      "n8n RAG workflow with Pinecone vector store for semantic retrieval",
+      "95% validation accuracy on 30-intent TensorFlow/Keras classifier",
+      "Real-time document updates without retraining",
+      "Multilingual support via Google Translate API",
+    ],
+    tech: ["n8n", "OpenAI", "Pinecone", "TensorFlow", "Keras", "RAG"],
+    img: projectImg2,
+    code: "https://github.com/yashbheke2000/BearcatBot",
+    featured: true,
+  },
+  {
     title: "Mood Disorder Analysis",
     period: "2024",
     description:
@@ -32,7 +49,7 @@ const projects = [
       "SHAP analysis for biomarker identification",
     ],
     tech: ["Python", "Scikit-learn", "Random Forest", "SHAP"],
-    img: projectImg2,
+    img: projectImg3,
     code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing",
   },
   {
@@ -46,7 +63,7 @@ const projects = [
       "93% pricing band coverage",
     ],
     tech: ["Python", "Random Forest", "SHAP", "Pandas"],
-    img: projectImg3,
+    img: projectImg4,
     code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
   },
 ];

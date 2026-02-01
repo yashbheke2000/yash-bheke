@@ -30,10 +30,22 @@ const degrees = [
 
 const leadership = [
   {
+    title: "Student Ambassador",
+    org: "MSIS, University of Cincinnati",
+    period: "Sept 2025 - Dec 2025",
+    desc: "Representing the MSIS program and guiding prospective students",
+  },
+  {
+    title: "Project Lead",
+    org: "Neo Initiative (Pro-bono Consulting)",
+    period: "Sept 2025 - Dec 2025",
+    desc: "Leading consulting projects at University of Cincinnati",
+  },
+  {
     title: "Technical Head",
     org: "SIES Graduate School of Technology",
-    period: "May 2020 - January 2022",
-    desc: "Upskilled team through workshops and directed production of tech events",
+    period: "May 2020 - Jan 2022",
+    desc: "Organized ByteCamp, Hackathons, Dev Summit, and TEDxSIESGST",
   },
 ];
 
@@ -145,9 +157,9 @@ const EducationLeadershipSection = () => (
             <h4 className="font-bold text-foreground mb-4">Highlights</h4>
             <ul className="space-y-3">
               {[
-                "Advanced coursework in Generative AI and Statistical Computing",
-                "Strong foundation in Electronics and Telecommunications",
-                "Active in technical community building and knowledge sharing",
+                "Organized flagship events: ByteCamp, Hackathons, Dev Summit, TEDxSIESGST",
+                "Student Ambassador guiding prospective MSIS students",
+                "Pro-bono consulting leadership with Neo Initiative",
               ].map((h, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
