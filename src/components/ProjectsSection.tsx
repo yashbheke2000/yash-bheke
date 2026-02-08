@@ -7,22 +7,6 @@ import projectImg4 from "@/assets/airbnb.jpg";
 
 const projects = [
   {
-    title: "SafeStreet",
-    period: "2025",
-    description:
-      "Architected a multimodal, real-time safety chatbot for homebuyers and urban commuters, combining LLMs, live search APIs, and image analysis.",
-    highlights: [
-      "Live crime stats and safest housing recommendations",
-      "Vision-LLM pipelines for crime-scene image analysis",
-      "20+ language support for diverse communities",
-      "<2 seconds response time on typical queries",
-    ],
-    tech: ["Gemini-1.5 Pro", "YOLOv8", "RAG", "Vision-LLM", "Python"],
-    img: projectImg1,
-    code: "https://github.com/harshitaaa006/GenAIProject",
-    featured: true,
-  },
-  {
     title: "Bearcats Bot",
     period: "2025",
     description:
@@ -36,6 +20,22 @@ const projects = [
     tech: ["n8n", "OpenAI", "Pinecone", "TensorFlow", "Keras", "RAG"],
     img: projectImg2,
     code: "https://github.com/yashbheke2000/BearcatBot",
+    featured: true,
+  },
+  {
+    title: "SafeStreet",
+    period: "2025",
+    description:
+      "Architected a multimodal, real-time safety chatbot for homebuyers and urban commuters, combining LLMs, live search APIs, and image analysis.",
+    highlights: [
+      "Live crime stats and safest housing recommendations",
+      "Vision-LLM pipelines for crime-scene image analysis",
+      "20+ language support for diverse communities",
+      "<2 seconds response time on typical queries",
+    ],
+    tech: ["Gemini-1.5 Pro", "YOLOv8", "RAG", "Vision-LLM", "Python"],
+    img: projectImg1,
+    code: "https://github.com/harshitaaa006/GenAIProject",
     featured: true,
   },
   {

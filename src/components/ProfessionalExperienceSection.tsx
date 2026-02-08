@@ -63,7 +63,7 @@ const ProfessionalExperienceSection = () => (
           Building Scalable Solutions
         </h2>
         <p className="text-muted-foreground text-lg mt-6">
-          2+ years of experience in data engineering, analytics, and software development
+          3 years of experience in data engineering, analytics, and software development
         </p>
       </motion.div>
 

@@ -10,7 +10,7 @@ const USER_ID = "q7430s3qsE9ENPbDk";
 const contactInfo = [
   { icon: Mail, label: "Email", value: "yash.bheke2000@gmail.com", href: "mailto:yash.bheke2000@gmail.com" },
   { icon: Phone, label: "Phone", value: "+1 (513) 276-5130", href: "tel:+15132765130" },
-  { icon: MapPin, label: "Location", value: "Cincinnati, OH", href: null },
+  { icon: MapPin, label: "Location", value: "Cincinnati, OH, USA", href: null },
 ];
 
 const socials = [
@@ -206,7 +206,6 @@ const ContactSection = () => {
       <div className="container mx-auto px-6 mt-32 pt-8 border-t border-border">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Yash Krishna Bheke. All rights reserved.</p>
-          <p>Built with passion and precision</p>
         </div>
       </div>
     </section>
