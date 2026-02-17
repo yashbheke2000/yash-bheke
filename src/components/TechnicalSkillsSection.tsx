@@ -8,7 +8,7 @@ const SKILL_CATEGORIES = [
     label: "Languages",
     icon: Code,
     color: "from-blue-500 to-cyan-500",
-    skills: ["Python", "SQL", "R", "Bash", "C++"],
+    skills: ["Python", "SQL", "R", "Bash", "C++", "TypeScript"],
   },
   {
     key: "ml",
@@ -29,7 +29,7 @@ const SKILL_CATEGORIES = [
     label: "Data Engineering",
     icon: Server,
     color: "from-orange-500 to-amber-500",
-    skills: ["ETL (Batch & Real-Time)", "Feature Engineering", "PCA", "Data Warehousing"],
+    skills: ["ETL (Batch & Real-Time)", "Feature Engineering", "PCA", "Operational Data Store", "Data Warehousing"],
   },
   {
     key: "viz",
