@@ -3,7 +3,20 @@ import { Briefcase, Calendar, MapPin, ArrowUpRight } from "lucide-react";
 
 const experiences = [
   {
-    title: "AI Intern",
+    title: "Data Science Intern",
+    subtitle: "Analytics & BI",
+    company: "Parking Base",
+    period: "Feb 2026 - Apr 2026",
+    location: "Cincinnati, Ohio",
+    achievements: [
+      "Developed a Vendor Profitability Matrix using Looker and BigQuery to analyze transaction volume vs. net profit, optimizing inventory allocation across parking reservation partners",
+      "Designed a Manual Adjustment Audit correlating Biometric vs manual Backoffice clock-outs to enhance payroll integrity",
+      "Architected a payment-performance analytics workflow that surfaced declines by card type and channel, raising overall payment gateway approval rate to 98.7% (+5.7% relative)",
+    ],
+    tech: ["Looker", "BigQuery", "Gemini SDK", "Python", "LookML"],
+  },
+  {
+    title: "AI Engineer Intern",
     subtitle: "RAG & NLP Development",
     company: "University of Cincinnati",
     period: "Sept 2025 - Dec 2025",
@@ -12,7 +25,7 @@ const experiences = [
       "Built a custom n8n-based RAG workflow that ingests MSIS program FAQs, creates OpenAI embeddings stored in Pinecone vector database for semantic retrieval",
       "Achieved 95% validation accuracy on a custom 30-intent classification model using TensorFlow/Keras neural network",
     ],
-    tech: ["n8n", "RAG", "OpenAI", "Pinecone", "TensorFlow", "Keras", "NLP"],
+    tech: ["Python", "TensorFlow", "Keras", "n8n", "RAG", "Pinecone", "LLM"],
   },
   {
     title: "Graduate Assistant",
@@ -24,7 +37,7 @@ const experiences = [
       "Optimized legacy data pipeline on Databricks, improving processing efficiency by 31% across 15 complex research workflows",
       "Designed scalable data ingestion pipelines integrating AWS RDS/S3 with Unity Catalog for reproducible ML experiments",
     ],
-    tech: ["Databricks", "PySpark", "SQL", "AWS RDS", "AWS S3", "Unity Catalog"],
+    tech: ["Databricks", "DBeaver", "ETL", "Python", "PySpark", "SQL", "AWS", "S3"],
   },
   {
     title: "Data Scientist",
@@ -33,12 +46,12 @@ const experiences = [
     period: "Sept 2022 - Jul 2024",
     location: "Mumbai, India",
     achievements: [
-      "Accelerated model inference time by 87% (15+ min to under 2 min) with PCA-based dimensionality reduction and XGBoost tuning",
-      "Saved $200K+ annually by deploying ensemble classification models via FastAPI, achieving 81% accuracy in flight delay predictions",
-      "Improved user engagement by 18% through A/B testing frameworks with Bayesian inference across financial workflows",
+      "Accelerated model inference time by 87% (15+ min to under 2 min) with PCA-based dimensionality reduction and XGBoost tuning across 20+ clients",
+      "Saved $370K+ annually by deploying ensemble classification models via FastAPI, achieving 81% accuracy in flight delay predictions for 12 clients with 1k+ daily inferences",
+      "Improved user engagement by 18% and reduced reporting errors by 16% through A/B testing frameworks with Bayesian inference across financial workflows",
       "Automated data pre-processing, eliminating 60+ hours of monthly manual effort",
     ],
-    tech: ["Python", "XGBoost", "Random Forest", "FastAPI", "A/B Testing", "PCA"],
+    tech: ["Oracle", "Python", "SQL", "ETL", "A/B Testing", "FastAPI"],
   },
 ];
 

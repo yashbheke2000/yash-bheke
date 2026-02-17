@@ -53,16 +53,16 @@ const projects = [
     code: "https://colab.research.google.com/drive/14dIrMxjuBprbVqeoWUFgm2OfL2fFLDkz?usp=sharing",
   },
   {
-    title: "Airbnb Pricing Tool",
-    period: "2024",
+    title: "Airbnb Optimum Pricing Tool",
+    period: "Oct 2024 - Dec 2024",
     description:
-      "Robust pricing optimization application for short-term rental hosts with ML-backed recommendations.",
+      "Regression model to predict Airbnb listing prices with SHAP-based feature analysis and Streamlit deployment for hosts.",
     highlights: [
-      "R²=0.83 with 600-tree Random Forest",
-      "40% error reduction over linear models",
-      "93% pricing band coverage",
+      "35.8% improvement over baseline models",
+      "SHAP analysis to identify key price drivers",
+      "Deployed via Streamlit for interactive parameter tuning",
     ],
-    tech: ["Python", "Random Forest", "SHAP", "Pandas"],
+    tech: ["Databricks", "Python", "scikit-learn", "SHAP", "Streamlit"],
     img: projectImg4,
     code: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
   },
