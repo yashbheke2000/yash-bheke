@@ -66,8 +66,9 @@ const AboutMeSection = () => (
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I'm a dedicated Data Scientist with expertise in Data Analytics and Machine Learning,
-            currently pursuing my Master's in Information Systems at the University of Cincinnati.
+            Data scientist and ML-focused graduate student with end-to-end experience building scalable data pipelines,
+            accelerating model inference by 87%, and driving six-figure cost savings through production ML systems,
+            A/B testing, and cloud-based analytics on Databricks, AWS, and MLOps stacks.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
             At Accelya, I built real-time predictive models, analytics dashboards and engineered

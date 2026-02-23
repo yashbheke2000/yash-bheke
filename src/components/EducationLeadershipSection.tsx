@@ -6,16 +6,15 @@ const degrees = [
     title: "Master of Science in Information Systems",
     school: "University of Cincinnati",
     subtitle: "Carl H. Lindner College of Business",
-    period: "August 2024 - May 2026",
+    period: "August 2024 - April 2026",
     location: "Cincinnati, OH",
     coursework: [
-      "Generative AI",
+      "Gen AI",
       "Statistical Computing",
-      "Datamining for BI",
+      "Data Mining for BI",
       "Data Analysis",
-      "AI/ML",
+      "AI & Machine Learning",
       "Data Visualization",
-      "Database Modeling",
     ],
   },
   {
@@ -40,12 +39,6 @@ const leadership = [
     org: "Neo Initiative (Pro-bono Consulting)",
     period: "Sept 2025 - Dec 2025",
     desc: "Leading consulting projects at University of Cincinnati",
-  },
-  {
-    title: "Technical Head",
-    org: "SIES Graduate School of Technology",
-    period: "May 2020 - Jan 2022",
-    desc: "Organized ByteCamp, Hackathons, Dev Summit, and TEDxSIESGST",
   },
 ];
 
