@@ -8,21 +8,21 @@ const SKILL_CATEGORIES = [
     label: "Languages",
     icon: Code,
     color: "from-blue-500 to-cyan-500",
-    skills: ["Python", "SQL", "R", "Bash", "C++", "TypeScript"],
+    skills: ["Python", "SQL", "R"],
   },
   {
     key: "ml",
     label: "Data Science & ML",
     icon: BarChart,
     color: "from-purple-500 to-pink-500",
-    skills: ["PyTorch", "TensorFlow", "Keras", "scikit-learn", "NLP", "LLMs", "RAG", "A/B Testing"],
+    skills: ["TensorFlow", "Scikit-learn", "PyTorch", "NLP", "A/B Testing"],
   },
   {
     key: "cloud",
     label: "Cloud & Big Data",
     icon: Cloud,
     color: "from-green-500 to-emerald-500",
-    skills: ["Databricks", "PySpark", "Snowflake", "AWS S3", "AWS RDS", "BigQuery", "Oracle", "MySQL", "PostgreSQL"],
+    skills: ["Databricks", "PySpark", "Snowflake", "AWS", "BigQuery"],
   },
   {
     key: "eng",
@@ -36,14 +36,14 @@ const SKILL_CATEGORIES = [
     label: "Visualization & Analysis",
     icon: Database,
     color: "from-pink-500 to-rose-500",
-    skills: ["Tableau", "Power BI", "Looker", "Excel", "Zoho", "Matplotlib", "Seaborn"],
+    skills: ["Tableau", "Power BI", "Looker", "Matplotlib"],
   },
   {
     key: "devops",
     label: "DevOps & Deployment",
     icon: Cpu,
     color: "from-indigo-500 to-violet-500",
-    skills: ["Docker", "FastAPI", "Flask", "Git", "GitHub", "CI/CD"],
+    skills: ["Docker", "FastAPI", "Git", "GitHub", "CI/CD"],
   },
 ];
 
