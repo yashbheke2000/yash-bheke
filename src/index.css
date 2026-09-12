@@ -2,55 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
 @layer base {
   :root {
-    /* Dark editorial theme inspired by vanholtz.co */
-    --background: 220 20% 6%;
-    --foreground: 0 0% 98%;
-
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 210 100% 60%;
-    --primary-foreground: 220 20% 6%;
-
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 90%;
-
-    --muted: 220 15% 20%;
-    --muted-foreground: 220 10% 55%;
-
-    --accent: 45 100% 60%;
-    --accent-foreground: 220 20% 6%;
+    --background: 100 23% 97%;
+    --foreground: 153 21% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 153 21% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 21% 12%;
+    --primary: 164 80% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 105 16% 93%;
+    --secondary-foreground: 153 21% 12%;
+    --muted: 105 12% 91%;
+    --muted-foreground: 153 10% 40%;
+    --accent: 11 100% 65%;
+    --accent-foreground: 153 21% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 210 100% 60%;
+    --border: 150 13% 84%;
+    --input: 150 13% 84%;
+    --ring: 164 80% 30%;
 
-    --professional: 0 0% 98%;
-    --professional-foreground: 220 20% 6%;
+    --professional: 153 21% 12%;
+    --professional-foreground: 100 23% 97%;
     
     --success: 142 76% 45%;
     --success-foreground: 220 20% 6%;
 
-    /* Premium gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(260 100% 70%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 20% 6%), hsl(220 20% 10%));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(210 100% 60% / 0.15), transparent 70%);
-    
-    /* Shadows */
-    --shadow-glow: 0 0 60px -10px hsl(210 100% 60% / 0.4);
-    --shadow-card: 0 4px 40px -4px hsl(0 0% 0% / 0.5);
-    
-    --radius: 0.75rem;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --shadow-card: 0 18px 50px -34px hsl(153 21% 12% / 0.32);
+    --radius: 0.5rem;
 
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 0 0% 98%;
@@ -62,10 +46,6 @@
     --sidebar-ring: 210 100% 60%;
   }
 
-  .dark {
-    --background: 220 20% 6%;
-    --foreground: 0 0% 98%;
-  }
 }
 
 @layer base {
@@ -79,11 +59,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Sora', system-ui, sans-serif;
   }
 }
 
@@ -98,10 +78,10 @@
   }
 
   .editorial-heading {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Sora', system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 0.9;
+    letter-spacing: 0;
+    line-height: 1;
   }
 
   .hover-lift {
@@ -113,26 +93,61 @@
   }
 }
 
+@layer components {
+  .bento-card {
+    @apply rounded-lg border border-border/70 bg-card shadow-card transition duration-300 hover:-translate-y-1 hover:border-primary/30;
+  }
+
+  .metric-card {
+    @apply flex min-h-44 flex-col justify-between rounded-lg p-7 shadow-card;
+  }
+
+  .metric-card span {
+    @apply text-xs font-extrabold uppercase;
+  }
+
+  .metric-card strong {
+    @apply mt-5 font-heading text-4xl font-extrabold;
+  }
+
+  .metric-card p {
+    @apply mt-2 text-sm opacity-80;
+  }
+
+  .skill-chip {
+    @apply rounded-md border border-border bg-secondary px-3 py-1.5 text-xs font-bold text-secondary-foreground;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(220 20% 8%);
+  background: hsl(var(--secondary));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(220 15% 25%);
+  background: hsl(var(--muted-foreground));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(210 100% 60%);
+  background: hsl(var(--primary));
 }
 
 /* Selection */
 ::selection {
-  background: hsl(210 100% 60% / 0.3);
-  color: hsl(0 0% 98%);
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
