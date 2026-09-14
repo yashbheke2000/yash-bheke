@@ -83,6 +83,23 @@ const projects = [
     description: "An admissions assistant pairing a tuned intent classifier with a maintainable n8n RAG pipeline for accurate, continuously updated answers.",
     metric: "0.91 F1 score",
     link: "https://github.com/yashbheke2000/BearcatBot",
+    image: bearcatbotWorkflow,
+  },
+  {
+    eyebrow: "Computer Vision",
+    title: "SafeStreet",
+    description: "A road-damage detection system that classifies street imagery and routes prioritized repair reports to municipal teams.",
+    metric: "Automated triage",
+    link: "https://github.com/yashbheke2000",
+    image: safestreet,
+  },
+  {
+    eyebrow: "Health Analytics",
+    title: "Mood Disorder Analysis",
+    description: "Exploratory and predictive analysis of clinical mood-disorder indicators, surfacing the features most tied to diagnosis.",
+    metric: "Interpretable models",
+    link: "https://github.com/yashbheke2000",
+    image: moodDisorder,
   },
   {
     eyebrow: "Predictive Pricing",
@@ -90,6 +107,7 @@ const projects = [
     description: "A regression pricing system with an interactive Streamlit experience and SHAP explanations across 25 host-controlled parameters.",
     metric: "35.8% R² lift",
     link: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
+    image: airbnb,
   },
 ];
 
