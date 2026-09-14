@@ -281,7 +281,6 @@ const Index = () => {
             </motion.div>
             <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={transition} className="bento-card p-8 sm:p-10 lg:col-span-7">
               <h3 className="font-heading text-2xl font-bold">Send a message</h3>
-              <p className="mt-2 text-muted-foreground">Fill this in and it will open in your email app, ready to send.</p>
               <div className="mt-7"><ContactForm /></div>
             </motion.div>
           </div>
