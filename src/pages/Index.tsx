@@ -18,6 +18,10 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
+import bearcatbotWorkflow from "@/assets/bearcatbot-workflow.png";
+import safestreet from "@/assets/safestreet.jpg";
+import moodDisorder from "@/assets/mood-disorder.jpg";
+import airbnb from "@/assets/airbnb.jpg";
 const resume = "/Yash_Bheke_Resume.docx";
 
 const navItems = ["About", "Experience", "Projects", "Skills", "Education", "Contact"];
