@@ -18,7 +18,7 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
-import resume from "@/assets/Yash_Bheke_Resume.docx";
+const resume = "/Yash_Bheke_Resume.docx";
 
 const navItems = ["About", "Experience", "Projects", "Skills", "Education", "Contact"];
 
