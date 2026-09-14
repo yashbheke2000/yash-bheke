@@ -18,6 +18,10 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
+import bearcatbotWorkflow from "@/assets/bearcatbot-workflow.png";
+import safestreet from "@/assets/safestreet.jpg";
+import moodDisorder from "@/assets/mood-disorder.jpg";
+import airbnb from "@/assets/airbnb.jpg";
 const resume = "/Yash_Bheke_Resume.docx";
 
 const navItems = ["About", "Experience", "Projects", "Skills", "Education", "Contact"];
@@ -83,6 +87,23 @@ const projects = [
     description: "An admissions assistant pairing a tuned intent classifier with a maintainable n8n RAG pipeline for accurate, continuously updated answers.",
     metric: "0.91 F1 score",
     link: "https://github.com/yashbheke2000/BearcatBot",
+    image: bearcatbotWorkflow,
+  },
+  {
+    eyebrow: "Computer Vision",
+    title: "SafeStreet",
+    description: "A road-damage detection system that classifies street imagery and routes prioritized repair reports to municipal teams.",
+    metric: "Automated triage",
+    link: "https://github.com/yashbheke2000",
+    image: safestreet,
+  },
+  {
+    eyebrow: "Health Analytics",
+    title: "Mood Disorder Analysis",
+    description: "Exploratory and predictive analysis of clinical mood-disorder indicators, surfacing the features most tied to diagnosis.",
+    metric: "Interpretable models",
+    link: "https://github.com/yashbheke2000",
+    image: moodDisorder,
   },
   {
     eyebrow: "Predictive Pricing",
@@ -90,6 +111,7 @@ const projects = [
     description: "A regression pricing system with an interactive Streamlit experience and SHAP explanations across 25 host-controlled parameters.",
     metric: "35.8% R² lift",
     link: "https://colab.research.google.com/drive/1Dsogjgziqw_XwNmJ7XL15Y0sefekQ4Gn?usp=sharing",
+    image: airbnb,
   },
 ];
 
@@ -205,9 +227,14 @@ const Index = () => {
             <SectionHeading eyebrow="Selected projects" title="Models people can use" detail="Practical systems designed for maintainability, interpretability, and clear decisions." />
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {projects.map((project, index) => (
-                <motion.article key={project.title} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ ...transition, delay: index * 0.08 }} className={`group bento-card flex min-h-80 flex-col justify-between p-8 sm:p-10 ${index === 1 ? "lg:translate-y-10" : ""}`}>
-                  <div><p className="text-xs font-extrabold uppercase text-accent">{project.eyebrow}</p><h3 className="mt-3 font-heading text-3xl font-extrabold">{project.title}</h3><p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{project.description}</p></div>
-                  <div className="mt-8 flex items-end justify-between gap-4"><strong className="font-heading text-2xl text-primary">{project.metric}</strong><Button asChild size="icon" aria-label={`Open ${project.title}`}><a href={project.link} target="_blank" rel="noreferrer"><ArrowUpRight /></a></Button></div>
+                <motion.article key={project.title} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} transition={{ ...transition, delay: index * 0.08 }} className="group bento-card flex flex-col overflow-hidden">
+                  <div className="aspect-[16/9] overflow-hidden bg-secondary">
+                    <img src={project.image} alt={`${project.title} preview`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between p-8 sm:p-10">
+                    <div><p className="text-xs font-extrabold uppercase text-accent">{project.eyebrow}</p><h3 className="mt-3 font-heading text-3xl font-extrabold">{project.title}</h3><p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{project.description}</p></div>
+                    <div className="mt-8 flex items-end justify-between gap-4"><strong className="font-heading text-2xl text-primary">{project.metric}</strong><Button asChild><a href={project.link} target="_blank" rel="noreferrer">View Code<ArrowUpRight /></a></Button></div>
+                  </div>
                 </motion.article>
               ))}
             </div>
