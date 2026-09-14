@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 import profilePhoto from "@/assets/profile-photo.png";
 import bearcatbotWorkflow from "@/assets/bearcatbot-workflow.png";
 import safestreet from "@/assets/safestreet.jpg";
