@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import ContactForm from "@/components/ContactForm";
 import profilePhoto from "@/assets/profile-photo.png";
 import bearcatbotWorkflow from "@/assets/bearcatbot-workflow.png";
 import safestreet from "@/assets/safestreet.jpg";
@@ -267,16 +268,23 @@ const Index = () => {
         </section>
 
         <section id="contact" className="scroll-mt-20 px-5 py-16 lg:px-8 lg:py-24">
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={transition} className="mx-auto max-w-7xl overflow-hidden rounded-lg bg-accent p-8 text-accent-foreground sm:p-12">
-            <div className="grid items-end gap-8 lg:grid-cols-2">
-              <div><p className="text-sm font-extrabold uppercase">Cincinnati, OH, USA</p><h2 className="mt-4 font-heading text-4xl font-extrabold sm:text-5xl">Let’s build something useful.</h2><p className="mt-4 max-w-xl text-lg opacity-80">Open to conversations about data science, AI engineering, and analytics opportunities.</p></div>
-              <div className="flex flex-wrap gap-3 lg:justify-end">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
+            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={transition} className="overflow-hidden rounded-lg bg-accent p-8 text-accent-foreground sm:p-10 lg:col-span-5">
+              <p className="text-sm font-extrabold uppercase">Cincinnati, OH, USA</p>
+              <h2 className="mt-4 font-heading text-4xl font-extrabold sm:text-5xl">Let’s build something useful.</h2>
+              <p className="mt-4 text-lg opacity-80">Open to conversations about data science, AI engineering, and analytics opportunities.</p>
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg" variant="secondary"><a href="mailto:yash.bheke2000@gmail.com"><Mail />Email</a></Button>
                 <Button asChild size="icon" variant="secondary" className="h-11 w-11" aria-label="LinkedIn"><a href="https://linkedin.com/in/yash-bheke" target="_blank" rel="noreferrer"><Linkedin /></a></Button>
                 <Button asChild size="icon" variant="secondary" className="h-11 w-11" aria-label="GitHub"><a href="https://github.com/yashbheke2000" target="_blank" rel="noreferrer"><Github /></a></Button>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={transition} className="bento-card p-8 sm:p-10 lg:col-span-7">
+              <h3 className="font-heading text-2xl font-bold">Send a message</h3>
+              <p className="mt-2 text-muted-foreground">Fill this in and it will open in your email app, ready to send.</p>
+              <div className="mt-7"><ContactForm /></div>
+            </motion.div>
+          </div>
         </section>
       </main>
 
